@@ -1,0 +1,14 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Nimmit_GiVi/lib/postgresql-42.7.0.jar",
+        "Nimmit_GiVi/lib/javafx.base.jar",
+        "Nimmit_GiVi/lib/javafx.controls.jar",
+        "Nimmit_GiVi/lib/javafx.fxml.jar",
+        "Nimmit_GiVi/lib/javafx.graphics.jar",
+        "Nimmit_GiVi/lib/javafx.media.jar",
+        "Nimmit_GiVi/lib/javafx.swing.jar",
+        "Nimmit_GiVi/lib/javafx.web.jar",
+        "Nimmit_GiVi/lib/javafx-swt.jar"
+    ]
+}
