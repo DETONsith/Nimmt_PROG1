@@ -22,6 +22,10 @@ public class Baralho {
 
         return baralho;
     }
+
+    public void embaralhar(){
+        Collections.shuffle(baralho);
+    }
 }
 
 
