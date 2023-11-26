@@ -10,4 +10,8 @@ public class CardController {
     @FXML
     private ImageView path;
 
+    void initialize() {
+        System.out.println("CardController initialized");
+    }
+
 }

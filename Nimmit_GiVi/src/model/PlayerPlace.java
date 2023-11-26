@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 public class PlayerPlace {
     Player player;
     Hand hand;
@@ -17,6 +19,12 @@ public class PlayerPlace {
         this.hand.addCard(carta);
     }
 
+    public void giverCards(ArrayList<Carta> cartas){
+        for (Carta carta : cartas){
+            this.giveCard(carta);
+        }
+    }
+
     public void playCard(){
         if(this.player.isIA()){
             hand.pickRandomCard();
@@ -25,5 +33,9 @@ public class PlayerPlace {
             hand.pickCard();
         }
         
+    }
+    
+    public Hand getHand(){
+        return this.hand;
     }
 }

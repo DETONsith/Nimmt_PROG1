@@ -9,7 +9,7 @@ public class Carta{
         this.value = calculateCartaValue(number);
         this.visual = new CartaVisual(number, value);
     }
-    private int calculateCartaValue(int number){
+    public int calculateCartaValue(int number){
         int value = 1;
         if (isLastDigit5(number)){
             value += 1;

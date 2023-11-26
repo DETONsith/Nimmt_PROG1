@@ -29,4 +29,10 @@ public class Hand {
         return this.pickCard();
     }
 
+    public void printCards(){
+        for (Carta carta : this.cartas){
+            System.out.println(carta.getNumber() + " " + carta.getValue());
+        }
+    }
+
 }
