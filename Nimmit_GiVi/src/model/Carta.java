@@ -7,14 +7,7 @@ public class Carta{
     public Carta(int number){
         this.number = number;
         this.value = calculateCartaValue(number);
-        switch (this.value) {
-            case this.value == 1:
-                this. = "Carta1.fbx"; 
-                break;
-        
-            default:
-                break;
-        }
+        this.visual = new CartaVisual(number, value);
     }
     private int calculateCartaValue(int number){
         int value = 1;
@@ -63,6 +56,10 @@ public class Carta{
 
     public int getValue() {
         return value;
+    }
+
+    public CartaVisual getVisual() {
+        return visual;
     }
 
 
