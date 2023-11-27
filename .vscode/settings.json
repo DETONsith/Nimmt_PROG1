@@ -11,7 +11,10 @@
         "Nimmit_GiVi/lib/javafx.web.jar",
         "Nimmit_GiVi/lib/javafx-swt.jar",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx.base.jar",
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx.controls.jar",
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx.fxml.jar",
@@ -20,6 +23,9 @@
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx.swing.jar",
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx.web.jar",
         "c:\\Users\\Vi\\Documents\\PROG1\\JavaLib\\javafx-sdk-21.0.1\\lib\\javafx-swt.jar"
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     ]
 }
