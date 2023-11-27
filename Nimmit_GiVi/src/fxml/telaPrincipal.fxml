@@ -40,16 +40,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="921.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telaPrincipal">
+<VBox prefHeight="921.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telaPrincipal">
    <children>
-      <AnchorPane prefHeight="921.0" prefWidth="400.0" style="-fx-background-color: #865f1d;">
+      <AnchorPane prefHeight="921.0" style="-fx-background-color: #865f1d;">
          <children>
-            <ImageView fitHeight="921.0" fitWidth="801.0" layoutX="-3.0">
+            <ImageView fitHeight="921.0" fitWidth="805.0" layoutX="-2.0">
                <image>
-                  <Image url="@../../../Pictures/fundo%20tela%20incicial.jpeg" />
+                  <Image url="@../../../../Pictures/fundo%20tela%20incicial.jpeg" />
                </image>
             </ImageView>
-            <Pane layoutX="644.0" layoutY="350.0" opacity="0.51" prefHeight="294.0" prefWidth="149.0" style="-fx-background-color: #865F1D; -fx-border-color: #865F1D];">
+            <Pane layoutX="646.0" layoutY="350.0" opacity="0.51" prefHeight="294.0" prefWidth="149.0" style="-fx-background-color: #865F1D; -fx-border-color: #865F1D];">
                <children>
                   <Text layoutX="6.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" wrappingWidth="67.51171875" />
                   <TextField layoutX="6.0" layoutY="23.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
