@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="921.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="telaPrincipal">
+   <children>
+      <AnchorPane prefHeight="921.0" prefWidth="400.0" style="-fx-background-color: #865f1d;">
+         <children>
+            <ImageView fitHeight="921.0" fitWidth="801.0" layoutX="-3.0">
+               <image>
+                  <Image url="@../../../Pictures/fundo%20tela%20incicial.jpeg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="644.0" layoutY="350.0" opacity="0.51" prefHeight="294.0" prefWidth="149.0" style="-fx-background-color: #865F1D; -fx-border-color: #865F1D];">
+               <children>
+                  <Text layoutX="6.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="23.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="23.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+                  <Text layoutX="6.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 2" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="72.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="72.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+                  <Text layoutX="6.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 3" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="120.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="120.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+                  <Text layoutX="6.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 4" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="165.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="165.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+                  <Text layoutX="6.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 5" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="212.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="212.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+                  <Text layoutX="6.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 6" wrappingWidth="67.51171875" />
+                  <TextField layoutX="6.0" layoutY="259.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
+                  <TextField layoutX="75.0" layoutY="259.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="7.0" opacity="0.51" prefHeight="115.0" prefWidth="521.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="435.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="122.0" opacity="0.51" prefHeight="115.0" prefWidth="521.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="435.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="340.0" opacity="0.51" prefHeight="115.0" prefWidth="436.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="455.0" opacity="0.51" prefHeight="115.0" prefWidth="436.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="6.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="570.0" opacity="0.51" prefHeight="115.0" prefWidth="436.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="685.0" opacity="0.51" prefHeight="115.0" prefWidth="436.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+            <Pane layoutX="6.0" layoutY="800.0" opacity="0.51" prefHeight="115.0" prefWidth="436.0" style="-fx-background-color: #865F1D;">
+               <children>
+                  <Pane layoutX="7.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="92.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="178.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="264.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+                  <Pane layoutX="350.0" layoutY="5.0" prefHeight="104.0" prefWidth="79.0" style="-fx-background-color: #E8CFA4;" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <Pane prefHeight="123.0" prefWidth="87.0" style="-fx-background-color: #E8CFA4;" />
+   </children>
+</VBox>
