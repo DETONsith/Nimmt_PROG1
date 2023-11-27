@@ -34,6 +34,18 @@ public class PlayerPlace {
         }
         
     }
+
+    public int getHandSize(){
+        return this.hand.cartas.size();
+    }
+
+    public int getScore(){
+        return this.score;
+    }
+
+    public void decreaseScore(int value){
+        this.score -= value;
+    }
     
     public Hand getHand(){
         return this.hand;
