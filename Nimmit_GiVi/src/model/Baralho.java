@@ -8,7 +8,7 @@ public class Baralho {
 
     public Baralho() {
         baralho = criarBaralho(109);
-        //embaralhar();
+        embaralhar();
     }
 
     public List<Integer> getBaralho() {
@@ -32,6 +32,9 @@ public class Baralho {
 
     public ArrayList<Carta> pickCards(int numCards){
         ArrayList<Carta> cartas = new ArrayList<>();
+        if (numCards > baralho.size()){
+            numCards = baralho.size();
+        }
         for (int i = 0; i < numCards; i++){
             cartas.add(new Carta(baralho.get(0)));
             baralho.remove(0);
