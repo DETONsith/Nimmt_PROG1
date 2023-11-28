@@ -7,6 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.Carta;
+import model.Player;
 import model.PlayerPlace;
 import model.Tabuleiro;
 
@@ -340,14 +341,14 @@ public class MainScreenController {
 
         int size = players.size();
 
-        for(int i = 0; i < playerNames.size(); i++){
+        for(int i = 0; i<6; i++){
             if(i < size){
                 PlayerPlace player = players.get(i);
-                playerNames.get(i).setText(player.player.getName());
+                playerNames.get(i).setText(player.getPlayer().getName());
                 playerPoints.get(i).setText(Integer.toString(player.getScore()));            
             }else{
-                playerNames.get(i).setText("");
-                playerPoints.get(i).setText("");
+                playerNames.get(i).setVisible(false);
+                playerPoints.get(i).setVisible(false);
             }
         }
     }
