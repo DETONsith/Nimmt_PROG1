@@ -1,9 +1,13 @@
 package controller;
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import model.Carta;
+import model.PlayerPlace;
 import model.Tabuleiro;
 
 public class MainScreenController {
@@ -270,6 +274,9 @@ public class MainScreenController {
     @FXML
     private TextField playerpoints6;
 
+    private List<TextField> playerNames = new ArrayList<>();
+    private List<TextField> playerPoints = new ArrayList<>();
+
     public void initialize(){
         crtGrid = new ImageView[][]{
             {crt_00, crt_01, crt_02, crt_03, crt_04},
@@ -285,6 +292,20 @@ public class MainScreenController {
             {lbl_30, lbl_31, lbl_32, lbl_33, lbl_34},
             {lbl_40, lbl_41, lbl_42, lbl_43, lbl_44}
         };
+        
+        playerNames.add(playername1);
+        playerNames.add(playername2);
+        playerNames.add(playername3);
+        playerNames.add(playername4);
+        playerNames.add(playername5);
+        playerNames.add(playername6);
+
+        playerPoints.add(playerpoints1);
+        playerPoints.add(playerpoints2);
+        playerPoints.add(playerpoints3);
+        playerPoints.add(playerpoints4);
+        playerPoints.add(playerpoints5);
+        playerPoints.add(playerpoints6);
     }
     
 
@@ -294,6 +315,7 @@ public class MainScreenController {
         System.out.println(this.tabuleiro);
         this.tabuleiro.gameStart();
         renderGrid();
+        uptadePlayerFields();
     }
 
 
@@ -311,6 +333,23 @@ public class MainScreenController {
             }
         }
         
+    }
+
+    private void uptadePlayerFields(){
+        List<PlayerPlace> players = tabuleiro.getPlayers();
+
+        int size = players.size();
+
+        for(int i = 0; i < playerNames.size(); i++){
+            if(i < size){
+                PlayerPlace player = players.get(i);
+                playerNames.get(i).setText(player.player.getName());
+                playerPoints.get(i).setText(Integer.toString(player.getScore()));            
+            }else{
+                playerNames.get(i).setText("");
+                playerPoints.get(i).setText("");
+            }
+        }
     }
 
 }
