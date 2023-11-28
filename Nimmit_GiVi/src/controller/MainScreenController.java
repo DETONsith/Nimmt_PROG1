@@ -3,8 +3,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import model.Tabuleiro;
 
-public class telaPrincipal {
+public class MainScreenController {
+
+    Tabuleiro tabuleiro;
 
     @FXML
     private ImageView crt_00;
@@ -263,6 +266,10 @@ public class telaPrincipal {
 
     @FXML
     private TextField playerpoints6;
+
+    public void setTabuleiro(Tabuleiro tabuleiro) {
+        this.tabuleiro = tabuleiro;
+    }
 
 }
 

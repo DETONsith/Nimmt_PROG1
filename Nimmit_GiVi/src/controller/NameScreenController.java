@@ -93,29 +93,28 @@ public class NameScreenController {
         System.out.println("qtdIA: " + qtdIA);
         
         Tabuleiro tabuleiro = new Tabuleiro(players);
-        tabuleiro.gameStart();
 
-        // try {
-        //     // Load the FXML file for the "nomearJogadores" scene
-        //     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/chooseNames.fxml"));
-        //     Parent root = loader.load();
-        //     NameScreenController boardgamecontroller = loader.getController();
-        
-            
 
-        //     // Get the Stage from the ActionEvent
-        //     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        try {
+            // Load the FXML file for the "nomearJogadores" scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/telaPrincipal.fxml"));
+            Parent root = loader.load();
+            MainScreenController mainController = loader.getController();
+            mainController.setTabuleiro(tabuleiro);
 
-        //     // Create a new Scene with the FXML file's root Node as the root node for the Scene
-        //     Scene scene = new Scene(root);
+            // Get the Stage from the ActionEvent
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-        //     // Set the Stage's Scene
-        //     stage.setScene(scene);
-        //     stage.setTitle("Nimmit GiVi");
-        //     stage.show();
-        // } catch (IOException e) {
-        //     e.printStackTrace();
-        // }
+            // Create a new Scene with the FXML file's root Node as the root node for the Scene
+            Scene scene = new Scene(root);
+
+            // Set the Stage's Scene
+            stage.setScene(scene);
+            stage.setTitle("Nimmit GiVi");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     public void startFields(){
         System.out.println("qtdPlayers: " + qtdPlayers);

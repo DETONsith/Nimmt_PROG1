@@ -71,11 +71,15 @@ public class Grade {
             if(closestcard[0] == 110){ //essa carta é a menor que todas, então vai coletar a linha com a maior carta
                 int highestrow = getHighestRow();
                 Carta collectedRow[] = getRow(highestrow);
-                clearRow(highestrow);
-                setCarta(highestrow, 0, carta.getCarta());
+                Integer sumvalue = 0;
                 for (int i = 1; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
+                    sumvalue += collectedRow[i].getValue();
                 }
+                clearRow(highestrow);
+                setCarta(highestrow, 0, carta.getCarta());
+                
+                
 
 
             }
