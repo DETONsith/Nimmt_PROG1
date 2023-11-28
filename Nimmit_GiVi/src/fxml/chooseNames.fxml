@@ -63,7 +63,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" wrappingWidth="71.0">
+            <Text fx:id="p1label" fill="#865f1d" layoutX="50.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>
@@ -89,7 +89,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 2" wrappingWidth="71.0">
+            <Text fx:id="p2label" fill="#865f1d" layoutX="50.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 2" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>
@@ -99,7 +99,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 3" wrappingWidth="71.0">
+            <Text fx:id="p3label" fill="#865f1d" layoutX="50.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 3" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>
@@ -109,7 +109,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 4" wrappingWidth="71.0">
+            <Text fx:id="p4label" fill="#865f1d" layoutX="50.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 4" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>
@@ -119,7 +119,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 5" wrappingWidth="71.0">
+            <Text fx:id="p5label" fill="#865f1d" layoutX="50.0" layoutY="292.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 5" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>
@@ -129,7 +129,7 @@
                   <Font name="Lucida Console" size="17.0" />
                </font>
             </TextField>
-            <Text fill="#865f1d" layoutX="50.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 6" wrappingWidth="71.0">
+            <Text fx:id="p6label" fill="#865f1d" layoutX="50.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 6" wrappingWidth="71.0">
                <font>
                   <Font name="Georgia" size="15.0" />
                </font>

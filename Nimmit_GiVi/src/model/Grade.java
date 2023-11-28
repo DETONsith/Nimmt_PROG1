@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Grade {
     Carta[][] grid;
@@ -18,9 +19,37 @@ public class Grade {
         return grid[x];
     }
 
+    public void clearRow(int x){
+        for (int i = 0; i < 5; i++){
+            grid[x][i] = null;
+        }
+    }
+
+    public void setupInitialCards(Carta cartas[]){
+        if(cartas.length != 5){
+            return;
+        }
+        for (int i = 0; i < 5; i++){
+            this.setCarta(i, 0, cartas[i]);
+        }
+    }
+
     public void addCard(SignedCard carta){
         this.cardstoadd.add(carta);
         orderCards();
+    }
+
+    public void printgrid(){
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < 5; j++){ 
+                if (this.grid[i][j] == null){
+                    System.out.print("0 ");
+                    continue;
+                }
+                System.out.print(this.grid[i][j].getNumber() + " ");
+            }
+            System.out.println();
+        }
     }
 
     private void orderCards(){ //ordenando com bubble sort
@@ -34,4 +63,83 @@ public class Grade {
             }
         }
     }
+
+    public void processCards(){ //MUDAR O TIPO DE RETORNO PARA ALGO COMO MAP<PLAYER, INTEGER> PARA VINCULAR O VALOR DAS CARTAS COM O JOGADOR
+        for (SignedCard carta : this.cardstoadd){ //objetivos: encontrar a carta mais a direita de cada linha, ver qual delas é maior e mais proxima da carta que vai ser adicionada, e adicionar a carta uma coluna a direita da carta mais proxima
+            Integer[][] rightestcard = getRightestCards();
+            Integer closestcard[] =  getClosestCard(rightestcard, carta); //0 = value, 1 = column, 2 = row
+            if(closestcard[0] == 110){ //essa carta é a menor que todas, então vai coletar a linha com a maior carta
+                int highestrow = getHighestRow();
+                Carta collectedRow[] = getRow(highestrow);
+                clearRow(highestrow);
+                setCarta(highestrow, 0, carta.getCarta());
+                for (int i = 1; i < 5; i++){
+                    //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
+                }
+
+
+            }
+            }
+            
+            
+        }
+    
+    
+
+    private Integer[][] getRightestCards(){
+        Integer[][] rightestcard = new Integer [5][2];
+        for (int i = 0; i < 5; i++){ //pega todas as cartas mais a direita de cada linha
+                for (int j = 0; j < 5; j++){
+                    if(this.grid[i][j] == null){
+                        break;
+                    }
+                    else{
+                        rightestcard[5][0] = this.grid[i][j].getNumber(); //0 = card number
+                        rightestcard[5][1] = j; // 1 = column
+                    }
+                }
+            }
+        return rightestcard;
+    }
+
+    private Integer[] getClosestCard(Integer[][] rightestCard, SignedCard carta){
+        Integer closestcard[] = new Integer[2]; //0 = value, 1 = column, 2 = row
+        closestcard[0] = 110;
+        for (int i = 0; i < 5; i++){ //de cada carta mais a direita pega a mais proxima da carta e que é menor que ela (carta-carta_na_grid = menor valor)
+            if(rightestCard[i][0] > carta.getCarta().getNumber()){
+                continue;
+            }else{
+                if(closestcard[0] == 110){
+                    closestcard[0] = rightestCard[i][0];
+                    closestcard[1] = rightestCard[i][1];
+                    closestcard[2] = i;
+                }
+                else{
+                    if(carta.getCarta().getNumber()-rightestCard[i][0] < carta.getCarta().getNumber() - closestcard[0]){
+                        closestcard[0] = rightestCard[i][0];
+                        closestcard[1] = rightestCard[i][1];
+                        closestcard[2] = i;
+                    }
+                }
+            }
+        }
+        return closestcard;
+    }
+
+    private int getHighestRow(){ //retorna o número linha com a carta mais alta
+        Integer[][] rightestcards = getRightestCards();
+        Integer[] highestrow = new Integer[2];
+        highestrow[0] = rightestcards[0][0];
+        highestrow[1] = 0;
+
+        for (int i = 1; i < 5; i++){
+            if(rightestcards[i][0] > highestrow[0]){
+                highestrow[0] = rightestcards[i][0];
+                highestrow[1] = i;
+            }
+        }
+        return highestrow[1];
+    }
 }
+
+

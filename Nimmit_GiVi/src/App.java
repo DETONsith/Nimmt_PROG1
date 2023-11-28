@@ -18,6 +18,7 @@ public class App extends Application{
         Parent root = fxmlloader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.resizableProperty().setValue(false);
         primaryStage.setTitle("nimmit givi");
         primaryStage.show();
         

@@ -2,32 +2,49 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Iterator;
 
 public class Tabuleiro {
     ArrayList<PlayerPlace> players;
     Baralho baralho;
     Grade grid;
 
-    public Tabuleiro() {
-        this.players = new ArrayList<>();
+    Iterator<PlayerPlace> playerIterator;
+
+
+    
+
+
+    public Tabuleiro(ArrayList<PlayerPlace> players) {
+        this.players = players;
         this.baralho = new Baralho();
         this.grid = new Grade();
-    }
-
-    private void addPlayer(PlayerPlace player) {
-        this.players.add(player);
+        this.playerIterator = this.players.iterator();
     }
 
     public void addCardtoGrid(SignedCard carta) {
         this.grid.addCard(carta);
     }
 
-    public <Iterator> void startRound(){
+    public void startRound(){
         if (this.players.getFirst().getHandSize() == 0){
             checkWinner();
         }
+        else{
+            this.grid.printgrid();
+        }
+
     }
     
+    public void gameStart(){
+        for (PlayerPlace player : this.players){
+            player.giverCards(this.baralho.pickCards(12));
+        }
+        ArrayList<Carta> cartas = this.baralho.pickCards(5);
+        this.grid.setupInitialCards(cartas.toArray(new Carta[cartas.size()]));
+        startRound();
+    }
+
     public void checkWinner(){
         List<PlayerPlace> winner = new ArrayList<>();
         for (PlayerPlace player : this.players){

@@ -58,7 +58,7 @@
                   <Font name="Georgia" size="51.0" />
                </font>
             </Text>
-            <TextField fx:id="numJogadores" layoutX="176.0" layoutY="170.0" onKeyPressed="#playerqtd_changed" opacity="0.75" prefHeight="25.0" prefWidth="91.0" style="-fx-border-color: #865F1D; -fx-background-color: #E8CFA4;" text="3-6">
+            <TextField fx:id="numJogadores" layoutX="176.0" layoutY="170.0" opacity="0.75" prefHeight="25.0" prefWidth="91.0" style="-fx-border-color: #865F1D; -fx-background-color: #E8CFA4;" text="3-6">
                <font>
                   <Font name="Lucida Console" size="17.0" />
                </font>
@@ -73,7 +73,7 @@
                   <Font name="Georgia" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="numIA" layoutX="176.0" layoutY="263.0" onKeyPressed="#iaqtd_changed" opacity="0.75" prefHeight="25.0" prefWidth="91.0" style="-fx-border-color: #865F1D; -fx-background-color: #E8CFA4;" text="0-5">
+            <TextField fx:id="numIA" layoutX="176.0" layoutY="263.0" opacity="0.75" prefHeight="25.0" prefWidth="91.0" style="-fx-border-color: #865F1D; -fx-background-color: #E8CFA4;" text="0-5">
                <font>
                   <Font name="Lucida Console" size="17.0" />
                </font>
