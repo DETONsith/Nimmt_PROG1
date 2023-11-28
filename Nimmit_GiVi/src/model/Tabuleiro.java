@@ -22,6 +22,11 @@ public class Tabuleiro {
         this.playerIterator = this.players.iterator();
     }
 
+    public ArrayList<PlayerPlace> getPlayers() { return players; }
+
+    public Carta[][] getGrid() { return grid.getGrid(); }
+    
+
     public void addCardtoGrid(SignedCard carta) {
         this.grid.addCard(carta);
     }

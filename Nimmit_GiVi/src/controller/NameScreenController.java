@@ -92,7 +92,7 @@ public class NameScreenController {
         System.out.println("qtdPlayers: " + qtdPlayers);
         System.out.println("qtdIA: " + qtdIA);
         
-        Tabuleiro tabuleiro = new Tabuleiro(players);
+
 
 
         try {
@@ -100,7 +100,7 @@ public class NameScreenController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/telaPrincipal.fxml"));
             Parent root = loader.load();
             MainScreenController mainController = loader.getController();
-            mainController.setTabuleiro(tabuleiro);
+            mainController.setTabuleiro(new Tabuleiro(players));
 
             // Get the Stage from the ActionEvent
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

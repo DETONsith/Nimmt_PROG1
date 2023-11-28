@@ -3,11 +3,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import model.Carta;
 import model.Tabuleiro;
 
 public class MainScreenController {
 
     Tabuleiro tabuleiro;
+    ImageView[][] crtGrid;
+    Text[][] lblGrid;
 
     @FXML
     private ImageView crt_00;
@@ -267,8 +270,47 @@ public class MainScreenController {
     @FXML
     private TextField playerpoints6;
 
+    public void initialize(){
+        crtGrid = new ImageView[][]{
+            {crt_00, crt_01, crt_02, crt_03, crt_04},
+            {crt_10, crt_11, crt_12, crt_13, crt_14},
+            {crt_20, crt_21, crt_22, crt_23, crt_24},
+            {crt_30, crt_31, crt_32, crt_33, crt_34},
+            {crt_40, crt_41, crt_42, crt_43, crt_44}
+        };
+        lblGrid = new Text[][]{
+            {lbl_00, lbl_01, lbl_02, lbl_03, lbl_04},
+            {lbl_10, lbl_11, lbl_12, lbl_13, lbl_14},
+            {lbl_20, lbl_21, lbl_22, lbl_23, lbl_24},
+            {lbl_30, lbl_31, lbl_32, lbl_33, lbl_34},
+            {lbl_40, lbl_41, lbl_42, lbl_43, lbl_44}
+        };
+    }
+    
+
     public void setTabuleiro(Tabuleiro tabuleiro) {
         this.tabuleiro = tabuleiro;
+        System.out.println("Tabuleiro setado");
+        System.out.println(this.tabuleiro);
+        this.tabuleiro.gameStart();
+        renderGrid();
+    }
+
+
+    private void renderGrid(){
+        Carta[][] grid = this.tabuleiro.getGrid();
+        for (int i = 0; i < 5; i++){
+            for (int j = 0; j < 5; j++){ 
+                if (grid[i][j] == null){
+                    crtGrid[i][j].setImage(null);
+                    lblGrid[i][j].setText("");
+                    continue;
+                }
+                crtGrid[i][j].setImage(grid[i][j].getImage());
+                lblGrid[i][j].setText(Integer.toString(grid[i][j].getNumber()));
+            }
+        }
+        
     }
 
 }

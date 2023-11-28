@@ -19,6 +19,8 @@ public class Grade {
         return grid[x];
     }
 
+    public Carta[][] getGrid() { return grid; }
+
     public void clearRow(int x){
         for (int i = 0; i < 5; i++){
             grid[x][i] = null;
