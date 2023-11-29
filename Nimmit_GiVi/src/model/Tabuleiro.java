@@ -11,10 +11,6 @@ public class Tabuleiro {
 
     Iterator<PlayerPlace> playerIterator;
 
-
-    
-
-
     public Tabuleiro(ArrayList<PlayerPlace> players) {
         this.players = players;
         this.baralho = new Baralho();
@@ -22,27 +18,33 @@ public class Tabuleiro {
         this.playerIterator = this.players.iterator();
     }
 
-    public ArrayList<PlayerPlace> getPlayers() { return players; }
+    public ArrayList<PlayerPlace> getPlayers() {
+        return players;
+    }
 
-    public Carta[][] getGrid() { return grid.getGrid(); }
-    
+    public ArrayList<SignedCard> getCardsinBoard() {
+        return grid.getCardstoadd();
+    }
+
+    public Carta[][] getGrid() {
+        return grid.getGrid();
+    }
 
     public void addCardtoGrid(SignedCard carta) {
         this.grid.addCard(carta);
     }
 
-    public void startRound(){
-        if (this.players.getFirst().getHandSize() == 0){
+    public void startRound() {
+        if (this.players.getFirst().getHandSize() == 0) {
             checkWinner();
-        }
-        else{
+        } else {
             this.grid.printgrid();
         }
 
     }
-    
-    public void gameStart(){
-        for (PlayerPlace player : this.players){
+
+    public void gameStart() {
+        for (PlayerPlace player : this.players) {
             player.giverCards(this.baralho.pickCards(12));
         }
         ArrayList<Carta> cartas = this.baralho.pickCards(5);
@@ -50,42 +52,46 @@ public class Tabuleiro {
         startRound();
     }
 
-    public void checkWinner(){
+    public void checkWinner() {
         List<PlayerPlace> winner = new ArrayList<>();
-        for (PlayerPlace player : this.players){
-                winner.add(player);
+        for (PlayerPlace player : this.players) {
+            winner.add(player);
         }
         int smallest_score = 100;
-        for (PlayerPlace player: winner){
-            if (player.getScore() < smallest_score){
+        for (PlayerPlace player : winner) {
+            if (player.getScore() < smallest_score) {
                 smallest_score = player.getScore();
             }
         }
 
-        for (PlayerPlace player: winner){
-            if (player.getScore() > smallest_score){
+        for (PlayerPlace player : winner) {
+            if (player.getScore() > smallest_score) {
                 winner.remove(player);
             }
         }
 
-        if (winner.size() == 1){
+        if (winner.size() == 1) {
             System.out.println("O vencedor é o jogador " + winner.get(0).player.getName());
-        }
-        else{
+        } else {
             System.out.println("Empate entre os jogadores: ");
-            for (PlayerPlace player: winner){
+            for (PlayerPlace player : winner) {
                 System.out.println(player.player.getName());
             }
         }
 
-    } 
+    }
 
-    public void processPlay(){
-        for (SignedCard carta : this.grid.cardstoadd){
+    public void processPlay(SignedCard carta) {
 
+        int score = grid.processCard(carta);
+
+        ArrayList<PlayerPlace> current_players = getPlayers();
+        for (PlayerPlace player : current_players) {
+            if (player.getPlayer() == carta.getPlayer()) {
+                player.decreaseScore(score);
+            }
         }
+
     }
 
 }
-
-

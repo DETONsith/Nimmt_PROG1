@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import model.Carta;
 import model.Player;
 import model.PlayerPlace;
+import model.SignedCard;
 import model.Tabuleiro;
 
 public class MainScreenController {
@@ -16,6 +17,8 @@ public class MainScreenController {
     Tabuleiro tabuleiro;
     ImageView[][] crtGrid;
     Text[][] lblGrid;
+    ImageView[] crtTopo;
+    Text[] lblTopo;
 
     @FXML
     private ImageView crt_00;
@@ -295,16 +298,17 @@ public class MainScreenController {
 
     private List<TextField> playerNames = new ArrayList<>();
     private List<TextField> playerPoints = new ArrayList<>();
-
+    private List<Text> playerLabels = new ArrayList<>();
+    private PlayerPlace activePlayer;
     public void initialize(){
-        crtGrid = new ImageView[][]{
+        this.crtGrid = new ImageView[][]{
             {crt_00, crt_01, crt_02, crt_03, crt_04},
             {crt_10, crt_11, crt_12, crt_13, crt_14},
             {crt_20, crt_21, crt_22, crt_23, crt_24},
             {crt_30, crt_31, crt_32, crt_33, crt_34},
             {crt_40, crt_41, crt_42, crt_43, crt_44}
         };
-        lblGrid = new Text[][]{
+        this.lblGrid = new Text[][]{
             {lbl_00, lbl_01, lbl_02, lbl_03, lbl_04},
             {lbl_10, lbl_11, lbl_12, lbl_13, lbl_14},
             {lbl_20, lbl_21, lbl_22, lbl_23, lbl_24},
@@ -312,6 +316,18 @@ public class MainScreenController {
             {lbl_40, lbl_41, lbl_42, lbl_43, lbl_44}
         };
         
+        crtTopo = new ImageView[]{
+            crttopo_00, crttopo_01, crttopo_02, crttopo_03, crttopo_04, crttopo_05,
+            crttopo_10, crttopo_11, crttopo_12, crttopo_13, crttopo_14, crttopo_15
+        };
+
+        lblTopo = new Text[]{
+            lbltopo_00, lbltopo_01, lbltopo_02, lbltopo_03, lbltopo_04, lbltopo_05,
+            lbltopo_10, lbltopo_11, lbltopo_12, lbltopo_13, lbltopo_14, lbltopo_15
+        };
+
+
+
         playerNames.add(playername1);
         playerNames.add(playername2);
         playerNames.add(playername3);
@@ -325,6 +341,15 @@ public class MainScreenController {
         playerPoints.add(playerpoints4);
         playerPoints.add(playerpoints5);
         playerPoints.add(playerpoints6);
+
+        playerLabels.add(lblplayer1);
+        playerLabels.add(lblplayer2);
+        playerLabels.add(lblplayer3);
+        playerLabels.add(lblplayer4);
+        playerLabels.add(lblplayer5);
+        playerLabels.add(lblplayer6);
+        
+        
     }
     
 
@@ -333,10 +358,21 @@ public class MainScreenController {
         System.out.println("Tabuleiro setado");
         System.out.println(this.tabuleiro);
         this.tabuleiro.gameStart();
+        activePlayer = this.tabuleiro.getPlayers().get(0);
         renderGrid();
-        uptadePlayerFields();
+        uptadePlayerFields();       
+        System.out.println("Jogador ativo: ");
     }
 
+    private void processRoundCards(){
+        ArrayList<SignedCard> cards = this.tabuleiro.getCardsinBoard();
+        for(SignedCard card : cards){
+            this.tabuleiro.processPlay(card);
+            this.renderGrid();
+            this.uptadePlayerFields();
+            this.sleep(3000);
+        }
+    }
 
     private void renderGrid(){
         Carta[][] grid = this.tabuleiro.getGrid();
@@ -351,7 +387,16 @@ public class MainScreenController {
                 lblGrid[i][j].setText(Integer.toString(grid[i][j].getNumber()));
             }
         }
-        
+        for(int i = 0; i < 12; i++){
+            if(i < this.activePlayer.getHandSize()){
+                Carta card = this.activePlayer.getHand().getCards().get(i);
+                crtTopo[i].setImage(card.getImage());
+                lblTopo[i].setText(Integer.toString(card.getNumber()));
+            }else{
+                crtTopo[i].setVisible(false);
+                lblTopo[i].setVisible(false);
+            }
+        }
     }
 
     private void uptadePlayerFields(){
@@ -367,9 +412,18 @@ public class MainScreenController {
             }else{
                 playerNames.get(i).setVisible(false);
                 playerPoints.get(i).setVisible(false);
+                playerLabels.get(i).setVisible(false);
             }
         }
     }
+
+    private void sleep(int miliseconds){
+         try {
+            Thread.sleep(miliseconds); // Sleep for 3 seconds
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+    }
+}
 
 }
 

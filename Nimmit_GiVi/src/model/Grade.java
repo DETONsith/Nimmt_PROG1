@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Grade {
     Carta[][] grid;
@@ -11,6 +10,10 @@ public class Grade {
         grid = new Carta[5][5];
     }
     
+    public ArrayList<SignedCard> getCardstoadd() {
+        return cardstoadd;
+    }
+
     public void setCarta(int x, int y, Carta carta) {
         grid[x][y] = carta;
     }
@@ -66,9 +69,11 @@ public class Grade {
         }
     }
 
-    public void processCards(){ //MUDAR O TIPO DE RETORNO PARA ALGO COMO MAP<PLAYER, INTEGER> PARA VINCULAR O VALOR DAS CARTAS COM O JOGADOR
-        for (SignedCard carta : this.cardstoadd){ //objetivos: encontrar a carta mais a direita de cada linha, ver qual delas é maior e mais proxima da carta que vai ser adicionada, e adicionar a carta uma coluna a direita da carta mais proxima
-            Integer[][] rightestcard = getRightestCards();
+
+
+    public Integer processCard(SignedCard carta){
+        Integer playerscore = 0;
+        Integer[][] rightestcard = getRightestCards();
             Integer closestcard[] =  getClosestCard(rightestcard, carta); //0 = value, 1 = column, 2 = row
             if(closestcard[0] == 110){ //essa carta é a menor que todas, então vai coletar a linha com a maior carta
                 int highestrow = getHighestRow();
@@ -80,15 +85,27 @@ public class Grade {
                 }
                 clearRow(highestrow);
                 setCarta(highestrow, 0, carta.getCarta());
-                
-                
-
-
+                //VINCULAR O VALOR DAS CARTAS COM O JOGADOR
+                playerscore = sumvalue;
             }
+            else if(closestcard[1] == 3){
+                Carta collectedRow[] = getRow(closestcard[2]);
+                Integer sumvalue = 0;
+                for (int i = 1; i < 5; i++){
+                    //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
+                    sumvalue += collectedRow[i].getValue();
+                }
+                clearRow(closestcard[2]);
+                setCarta(closestcard[2], 0, carta.getCarta());
+                //VINCULAR O VALOR DAS CARTAS COM O JOGADOR
+                playerscore = sumvalue;
             }
-            
-            
-        }
+            else{
+                setCarta(closestcard[2], closestcard[1]+1, carta.getCarta());
+            }
+            return playerscore;
+    }
+
     
     
 
