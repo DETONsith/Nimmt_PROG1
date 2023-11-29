@@ -204,6 +204,24 @@ public class MainScreenController {
     private Text lbl_44;
 
     @FXML
+    private Text lblplayer1;
+
+    @FXML
+    private Text lblplayer2;
+
+    @FXML
+    private Text lblplayer3;
+
+    @FXML
+    private Text lblplayer4;
+
+    @FXML
+    private Text lblplayer5;
+
+    @FXML
+    private Text lblplayer6;
+    
+    @FXML
     private Text lbltopo_00;
 
     @FXML
