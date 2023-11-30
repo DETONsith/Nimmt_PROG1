@@ -39,6 +39,10 @@ public class PlayerPlace {
         
     }
 
+    public void clearSelectedCard(){
+        this.hand.clearSelectedCards();
+    }
+
     public int getHandSize(){
         return this.hand.cartas.size();
     }

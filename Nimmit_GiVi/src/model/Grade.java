@@ -83,7 +83,9 @@ public class Grade {
                 Integer sumvalue = 0;
                 for (int i = 1; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
+                    if(collectedRow[i] != null){
                     sumvalue += collectedRow[i].getValue();
+                    }
                 }
                 clearRow(highestrow);
                 setCarta(highestrow, 0, carta.getCarta());
@@ -95,7 +97,9 @@ public class Grade {
                 Integer sumvalue = 0;
                 for (int i = 1; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
+                    if(collectedRow[i] != null){
                     sumvalue += collectedRow[i].getValue();
+                    }
                 }
                 clearRow(closestcard[2]);
                 setCarta(closestcard[2], 0, carta.getCarta());
@@ -119,8 +123,8 @@ public class Grade {
                         break;
                     }
                     else{
-                        rightestcard[5][0] = this.grid[i][j].getNumber(); //0 = card number
-                        rightestcard[5][1] = j; // 1 = column
+                        rightestcard[i][0] = this.grid[i][j].getNumber(); //0 = card number
+                        rightestcard[i][1] = j; // 1 = column
                     }
                 }
             }
@@ -128,7 +132,7 @@ public class Grade {
     }
 
     private Integer[] getClosestCard(Integer[][] rightestCard, SignedCard carta){
-        Integer closestcard[] = new Integer[2]; //0 = value, 1 = column, 2 = row
+        Integer closestcard[] = new Integer[3]; //0 = value, 1 = column, 2 = row
         closestcard[0] = 110;
         for (int i = 0; i < 5; i++){ //de cada carta mais a direita pega a mais proxima da carta e que é menor que ela (carta-carta_na_grid = menor valor)
             if(rightestCard[i][0] > carta.getCarta().getNumber()){

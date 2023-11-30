@@ -312,7 +312,7 @@ public class MainScreenController {
     @FXML
     void on_btn_action_click(ActionEvent event) {
         System.out.println(activePlayer.getHand().getSelectedCardIndex());
-        System.err.println("Botão clicado");
+        System.err.println(activePlayer);
         if (activePlayer.getHand().getSelectedCardIndex() == -1) {
             return;
         }
@@ -420,7 +420,7 @@ public class MainScreenController {
 
         lblTopo = new Text[] {
                 lbltopo_00, lbltopo_01, lbltopo_02, lbltopo_03, lbltopo_04, lbltopo_05, lbltopo_10, lbltopo_11,
-                lbltopo_12, lbltopo_13, lbltopo_14, lbltopo_15
+                lbltopo_12, lbltopo_14, lbltopo_15, lbltopo_13 
         };
 
         playerNames.add(playername1);
@@ -452,20 +452,23 @@ public class MainScreenController {
         System.out.println("Tabuleiro setado");
         System.out.println(this.tabuleiro);
         this.tabuleiro.gameStart();
-        activePlayer = this.tabuleiro.getPlayers().get(0);
+        activePlayer = this.tabuleiro.getNextPlayer();
         renderGrid();
         updatePlayerFields();
         System.out.println("Jogador ativo: ");
     }
 
     private void checkround() {
+        
+        this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
+        this.activePlayer = this.tabuleiro.getNextPlayer();
+        this.activePlayer.clearSelectedCard();
+        clearEnfaseCards();
         if (this.isAllCardsPlayed()) {
             this.processRoundCards();
             
-        } else {
-            this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
-            this.activePlayer = this.tabuleiro.getNextPlayer();
         }
+     
         this.renderGrid();
         activePlayer.getHand().printCards();
 
@@ -476,12 +479,32 @@ public class MainScreenController {
     private void processRoundCards() {
         ArrayList<SignedCard> cards = this.tabuleiro.getCardsinBoard();
         for (SignedCard card : cards) {
+            renderBoardCardsOnTop();
             this.tabuleiro.processPlay(card);
             this.renderGrid();
             this.updatePlayerFields();
             this.sleep(3000);
         }
     }
+
+    private void renderBoardCardsOnTop(){
+        ArrayList<SignedCard> cards = this.tabuleiro.getCardsinBoard();
+        ArrayList<Carta> cartas = new ArrayList<>();
+        for (SignedCard card : cards) {
+            cartas.add(card.getCarta());
+        }
+        for (int i = 0; i < 12; i++) {
+            if(i < cartas.size()){
+                crtTopo[i].setImage(cartas.get(i).getImage());
+                lblTopo[i].setText(Integer.toString(cartas.get(i).getNumber()));
+            }
+            else{
+                crtTopo[i].setVisible(false);
+                lblTopo[i].setVisible(false);
+            }
+        }
+    }
+
 
     private boolean isAllCardsPlayed() {
         if (this.tabuleiro.getCardsinBoard().size() == this.tabuleiro.getPlayers().size()) {
@@ -518,7 +541,7 @@ public class MainScreenController {
 
     private void enfaseCard(Integer index) {
         clearEnfaseCards();
-        crtTopo[index].setStyle("-fx-effect: dropshadow(three-pass-box, red, 10, 10, 0, 0);");
+        crtTopo[index].setStyle("-fx-effect: dropshadow(three-pass-box, white, 3, 3, 0, 0);");
     }
 
     private void clearEnfaseCards(){

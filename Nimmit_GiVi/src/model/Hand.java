@@ -14,6 +14,10 @@ public class Hand {
         return this.selectedCard;
     }
 
+    public void clearSelectedCards(){
+        this.selectedCard = -1;
+    }
+
     public void addCard(Carta carta){
         this.cartas.add(carta);
     }
