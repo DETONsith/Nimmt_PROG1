@@ -5,6 +5,7 @@ import java.util.List;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import model.Carta;
 import model.Player;
