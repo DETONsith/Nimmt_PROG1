@@ -32,12 +32,15 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -74,7 +77,7 @@
             </Pane>
             <Pane layoutX="6.0" layoutY="7.0" prefHeight="115.0" prefWidth="482.0" style="-fx-background-color: #865F1D;">
                <children>
-                  <ImageView fx:id="crttopo_00" fitHeight="114.0" fitWidth="78.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_00" fitHeight="114.0" fitWidth="78.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#cartatopo00" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
@@ -83,27 +86,27 @@
                      <font>
                         <Font name="OPTIOnyx" size="15.0" />
                      </font></Text>
-                  <ImageView fx:id="crttopo_01" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_01" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" onMouseClicked="#cartatopo01" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_02" fitHeight="114.0" fitWidth="78.0" layoutX="162.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_02" fitHeight="114.0" fitWidth="78.0" layoutX="162.0" layoutY="2.0" onMouseClicked="#cartatopo02" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_03" fitHeight="114.0" fitWidth="78.0" layoutX="242.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_03" fitHeight="114.0" fitWidth="78.0" layoutX="242.0" layoutY="2.0" onMouseClicked="#cartatopo03" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_04" fitHeight="114.0" fitWidth="78.0" layoutX="322.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_04" fitHeight="114.0" fitWidth="78.0" layoutX="322.0" layoutY="2.0" onMouseClicked="#cartatopo04" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_05" fitHeight="114.0" fitWidth="78.0" layoutX="402.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_05" fitHeight="114.0" fitWidth="78.0" layoutX="402.0" layoutY="2.0" onMouseClicked="#cartatopo05" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
@@ -137,7 +140,7 @@
             </Pane>
             <Pane layoutX="6.0" layoutY="122.0" prefHeight="115.0" prefWidth="482.0" style="-fx-background-color: #865F1D;">
                <children>
-                  <ImageView fx:id="crttopo_10" fitHeight="114.0" fitWidth="78.0" layoutX="2.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_10" fitHeight="114.0" fitWidth="78.0" layoutX="2.0" layoutY="2.0" onMouseClicked="#cartatopo10" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
@@ -147,27 +150,27 @@
                         <Font name="OPTIOnyx" size="15.0" />
                      </font>
                   </Text>
-                  <ImageView fx:id="crttopo_11" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_11" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" onMouseClicked="#cartatopo11" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_12" fitHeight="114.0" fitWidth="78.0" layoutX="162.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_12" fitHeight="114.0" fitWidth="78.0" layoutX="162.0" layoutY="2.0" onMouseClicked="#cartatopo12" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_13" fitHeight="114.0" fitWidth="78.0" layoutX="242.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_13" fitHeight="114.0" fitWidth="78.0" layoutX="242.0" layoutY="2.0" onMouseClicked="#cartatopop13" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_14" fitHeight="114.0" fitWidth="78.0" layoutX="322.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_14" fitHeight="114.0" fitWidth="78.0" layoutX="322.0" layoutY="2.0" onMouseClicked="#cartatopo14" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="crttopo_15" fitHeight="114.0" fitWidth="78.0" layoutX="402.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="crttopo_15" fitHeight="114.0" fitWidth="78.0" layoutX="402.0" layoutY="2.0" onMouseClicked="#cartatopo15" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
@@ -469,6 +472,14 @@
                   </Text>
                </children>
             </Pane>
+            <Button layoutX="503.0" layoutY="109.0" mnemonicParsing="false" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Button" textFill="#865f1d">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color opacity="0.9465649127960205" />
+                     </color>
+                  </DropShadow>
+               </effect></Button>
          </children>
       </AnchorPane>
       <Pane prefHeight="3.0" prefWidth="762.0" style="-fx-background-color: #E8CFA4;" />
