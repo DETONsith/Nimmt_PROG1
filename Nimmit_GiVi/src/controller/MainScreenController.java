@@ -1,9 +1,15 @@
 package controller;
+
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
@@ -20,6 +26,12 @@ public class MainScreenController {
     Text[][] lblGrid;
     ImageView[] crtTopo;
     Text[] lblTopo;
+
+    @FXML
+    private Button btn_action;
+
+    @FXML
+    private ImageView backimage;
 
     @FXML
     private ImageView crt_00;
@@ -224,7 +236,7 @@ public class MainScreenController {
 
     @FXML
     private Text lblplayer6;
-    
+
     @FXML
     private Text lbltopo_00;
 
@@ -296,98 +308,120 @@ public class MainScreenController {
 
     @FXML
     private TextField playerpoints6;
-     @FXML
-    void cartatopo00(MouseEvent event) {
 
+    @FXML
+    void on_btn_action_click(ActionEvent event) {
+        System.out.println(activePlayer.getHand().getSelectedCardIndex());
+        System.err.println("Botão clicado");
+        if (activePlayer.getHand().getSelectedCardIndex() == -1) {
+            return;
+        }
+        checkround();
+        System.out.println("Botão fim");
+    }
+
+    @FXML
+    void cartatopo00(MouseEvent event) {
+        enfaseCard(0);
+        activePlayer.getHand().selectCard(0);
     }
 
     @FXML
     void cartatopo01(MouseEvent event) {
-
+        enfaseCard(1);
+        activePlayer.getHand().selectCard(1);
     }
 
     @FXML
     void cartatopo02(MouseEvent event) {
-
+        enfaseCard(2);
+        activePlayer.getHand().selectCard(2);
     }
 
     @FXML
     void cartatopo03(MouseEvent event) {
-
+        enfaseCard(3);
+        activePlayer.getHand().selectCard(3);
     }
 
     @FXML
     void cartatopo04(MouseEvent event) {
-
+        enfaseCard(4);
+        activePlayer.getHand().selectCard(4);
     }
 
     @FXML
     void cartatopo05(MouseEvent event) {
-
+        enfaseCard(5);
+        activePlayer.getHand().selectCard(5);
     }
 
     @FXML
     void cartatopo10(MouseEvent event) {
-
+        enfaseCard(6);
+        activePlayer.getHand().selectCard(6);
     }
 
     @FXML
     void cartatopo11(MouseEvent event) {
-
+        enfaseCard(7);
+        activePlayer.getHand().selectCard(7);
     }
 
     @FXML
     void cartatopo12(MouseEvent event) {
-
+        enfaseCard(8);
+        activePlayer.getHand().selectCard(8);
     }
 
     @FXML
     void cartatopo14(MouseEvent event) {
-
+        enfaseCard(9);
+        activePlayer.getHand().selectCard(9);
     }
 
     @FXML
     void cartatopo15(MouseEvent event) {
-
+        enfaseCard(10);
+        activePlayer.getHand().selectCard(10);
     }
 
     @FXML
     void cartatopop13(MouseEvent event) {
-
+        enfaseCard(11);
+        activePlayer.getHand().selectCard(11);
     }
-
 
     private List<TextField> playerNames = new ArrayList<>();
     private List<TextField> playerPoints = new ArrayList<>();
     private List<Text> playerLabels = new ArrayList<>();
     private PlayerPlace activePlayer;
-    public void initialize(){
-        this.crtGrid = new ImageView[][]{
-            {crt_00, crt_01, crt_02, crt_03, crt_04},
-            {crt_10, crt_11, crt_12, crt_13, crt_14},
-            {crt_20, crt_21, crt_22, crt_23, crt_24},
-            {crt_30, crt_31, crt_32, crt_33, crt_34},
-            {crt_40, crt_41, crt_42, crt_43, crt_44}
+
+    public void initialize() {
+        this.crtGrid = new ImageView[][] {
+                { crt_00, crt_01, crt_02, crt_03, crt_04 },
+                { crt_10, crt_11, crt_12, crt_13, crt_14 },
+                { crt_20, crt_21, crt_22, crt_23, crt_24 },
+                { crt_30, crt_31, crt_32, crt_33, crt_34 },
+                { crt_40, crt_41, crt_42, crt_43, crt_44 }
         };
-        this.lblGrid = new Text[][]{
-            {lbl_00, lbl_01, lbl_02, lbl_03, lbl_04},
-            {lbl_10, lbl_11, lbl_12, lbl_13, lbl_14},
-            {lbl_20, lbl_21, lbl_22, lbl_23, lbl_24},
-            {lbl_30, lbl_31, lbl_32, lbl_33, lbl_34},
-            {lbl_40, lbl_41, lbl_42, lbl_43, lbl_44}
-        };
-        
-        crtTopo = new ImageView[]{
-            crttopo_00, crttopo_01, crttopo_02, crttopo_03, crttopo_04, crttopo_05,
-            crttopo_10, crttopo_11, crttopo_12, crttopo_13, crttopo_14, crttopo_15
+        this.lblGrid = new Text[][] {
+                { lbl_00, lbl_01, lbl_02, lbl_03, lbl_04 },
+                { lbl_10, lbl_11, lbl_12, lbl_13, lbl_14 },
+                { lbl_20, lbl_21, lbl_22, lbl_23, lbl_24 },
+                { lbl_30, lbl_31, lbl_32, lbl_33, lbl_34 },
+                { lbl_40, lbl_41, lbl_42, lbl_43, lbl_44 }
         };
 
-        lblTopo = new Text[]{
-            lbltopo_00, lbltopo_01, lbltopo_02, lbltopo_03, lbltopo_04, lbltopo_05,
-            lbltopo_10, lbltopo_11, lbltopo_12, lbltopo_13, lbltopo_14, lbltopo_15
+        crtTopo = new ImageView[] {
+                crttopo_00, crttopo_01, crttopo_02, crttopo_03, crttopo_04, crttopo_05, crttopo_10, crttopo_11,
+                crttopo_12, crttopo_14, crttopo_15, crttopo_13
         };
 
-
+        lblTopo = new Text[] {
+                lbltopo_00, lbltopo_01, lbltopo_02, lbltopo_03, lbltopo_04, lbltopo_05, lbltopo_10, lbltopo_11,
+                lbltopo_12, lbltopo_13, lbltopo_14, lbltopo_15
+        };
 
         playerNames.add(playername1);
         playerNames.add(playername2);
@@ -409,10 +443,9 @@ public class MainScreenController {
         playerLabels.add(lblplayer4);
         playerLabels.add(lblplayer5);
         playerLabels.add(lblplayer6);
-        
-        
+
+      
     }
-    
 
     public void setTabuleiro(Tabuleiro tabuleiro) {
         this.tabuleiro = tabuleiro;
@@ -421,25 +454,47 @@ public class MainScreenController {
         this.tabuleiro.gameStart();
         activePlayer = this.tabuleiro.getPlayers().get(0);
         renderGrid();
-        uptadePlayerFields();       
+        updatePlayerFields();
         System.out.println("Jogador ativo: ");
     }
 
-    private void processRoundCards(){
+    private void checkround() {
+        if (this.isAllCardsPlayed()) {
+            this.processRoundCards();
+            
+        } else {
+            this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
+            this.activePlayer = this.tabuleiro.getNextPlayer();
+        }
+        this.renderGrid();
+        activePlayer.getHand().printCards();
+
+
+
+    }
+
+    private void processRoundCards() {
         ArrayList<SignedCard> cards = this.tabuleiro.getCardsinBoard();
-        for(SignedCard card : cards){
+        for (SignedCard card : cards) {
             this.tabuleiro.processPlay(card);
             this.renderGrid();
-            this.uptadePlayerFields();
+            this.updatePlayerFields();
             this.sleep(3000);
         }
     }
 
-    private void renderGrid(){
+    private boolean isAllCardsPlayed() {
+        if (this.tabuleiro.getCardsinBoard().size() == this.tabuleiro.getPlayers().size()) {
+            return true;
+        }
+        return false;
+    }
+
+    private void renderGrid() {
         Carta[][] grid = this.tabuleiro.getGrid();
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j < 5; j++){ 
-                if (grid[i][j] == null){
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 5; j++) {
+                if (grid[i][j] == null) {
                     crtGrid[i][j].setImage(null);
                     lblGrid[i][j].setText("");
                     continue;
@@ -448,29 +503,43 @@ public class MainScreenController {
                 lblGrid[i][j].setText(Integer.toString(grid[i][j].getNumber()));
             }
         }
-        for(int i = 0; i < 12; i++){
-            if(i < this.activePlayer.getHandSize()){
+        for (int i = 0; i < 12; i++) {
+            if (i < this.activePlayer.getHandSize()) {
                 Carta card = this.activePlayer.getHand().getCards().get(i);
                 crtTopo[i].setImage(card.getImage());
                 lblTopo[i].setText(Integer.toString(card.getNumber()));
-            }else{
+            } else {
                 crtTopo[i].setVisible(false);
                 lblTopo[i].setVisible(false);
             }
         }
     }
 
-    private void uptadePlayerFields(){
+
+    private void enfaseCard(Integer index) {
+        clearEnfaseCards();
+        crtTopo[index].setStyle("-fx-effect: dropshadow(three-pass-box, red, 10, 10, 0, 0);");
+    }
+
+    private void clearEnfaseCards(){
+        for (ImageView crt : crtTopo) {
+            crt.setStyle("");
+        }
+    }
+
+    private void updatePlayerFields() {
         List<PlayerPlace> players = tabuleiro.getPlayers();
 
         int size = players.size();
 
-        for(int i = 0; i<6; i++){
-            if(i < size){
+        for (int i = 0; i < 6; i++) {
+            if (i < size) {
                 PlayerPlace player = players.get(i);
                 playerNames.get(i).setText(player.getPlayer().getName());
-                playerPoints.get(i).setText(Integer.toString(player.getScore()));            
-            }else{
+                playerPoints.get(i).setText(Integer.toString(player.getScore()));
+                playerNames.get(i).setDisable(true);
+                playerPoints.get(i).setDisable(true);
+            } else {
                 playerNames.get(i).setVisible(false);
                 playerPoints.get(i).setVisible(false);
                 playerLabels.get(i).setVisible(false);
@@ -478,13 +547,12 @@ public class MainScreenController {
         }
     }
 
-    private void sleep(int miliseconds){
-         try {
+    private void sleep(int miliseconds) {
+        try {
             Thread.sleep(miliseconds); // Sleep for 3 seconds
         } catch (InterruptedException e) {
             e.printStackTrace();
+        }
     }
-}
 
 }
-

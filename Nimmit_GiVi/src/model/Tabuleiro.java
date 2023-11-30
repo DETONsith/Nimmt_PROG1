@@ -40,7 +40,13 @@ public class Tabuleiro {
         } else {
             this.grid.printgrid();
         }
+    }
 
+    public PlayerPlace getNextPlayer() {
+        if (!this.playerIterator.hasNext()) {
+            this.playerIterator = this.players.iterator();
+        }
+        return this.playerIterator.next();
     }
 
     public void gameStart() {

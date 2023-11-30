@@ -8,6 +8,7 @@ public class Grade {
 
     public Grade() {
         grid = new Carta[5][5];
+        cardstoadd = new ArrayList<SignedCard>();
     }
     
     public ArrayList<SignedCard> getCardstoadd() {
@@ -40,6 +41,7 @@ public class Grade {
     }
 
     public void addCard(SignedCard carta){
+        System.out.println(grid);
         this.cardstoadd.add(carta);
         orderCards();
     }

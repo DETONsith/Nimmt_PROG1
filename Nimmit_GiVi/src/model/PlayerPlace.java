@@ -29,12 +29,12 @@ public class PlayerPlace {
         }
     }
 
-    public void playCard(){
+    public Carta playCard(){
         if(this.player.isIA()){
-            hand.pickRandomCard();
+            return hand.pickRandomCard();
         }
         else{
-            hand.pickCard();
+            return hand.pickCard();
         }
         
     }

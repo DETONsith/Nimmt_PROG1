@@ -9,6 +9,11 @@ public class Hand {
         this.cartas = new ArrayList<Carta>();
         this.selectedCard = -1;
     }
+
+    public int getSelectedCardIndex(){
+        return this.selectedCard;
+    }
+
     public void addCard(Carta carta){
         this.cartas.add(carta);
     }
