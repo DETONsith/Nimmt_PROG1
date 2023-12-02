@@ -2,21 +2,16 @@ package model;
 import java.io.File;
 import java.io.InputStream;
 import java.net.URI;
-
-import org.w3c.dom.css.RGBColor;
-
 import javafx.scene.image.Image;
 import javafx.scene.paint.Paint;
-import javafx.scene.text.Font;
+
 
 public class Carta{
     private int number;
     private int value;
-    private CartaVisual visual;
     public Carta(int number){
         this.number = number;
         this.value = calculateCartaValue(number);
-        this.visual = new CartaVisual(number, value);
     }
     public int calculateCartaValue(int number){
         int value = 1;
@@ -165,9 +160,7 @@ public class Carta{
         return value;
     }
 
-    public CartaVisual getVisual() {
-        return visual;
-    }
+   
 
 
 
