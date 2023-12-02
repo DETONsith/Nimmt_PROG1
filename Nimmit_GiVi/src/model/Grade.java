@@ -81,7 +81,7 @@ public class Grade {
                 int highestrow = getHighestRow();
                 Carta collectedRow[] = getRow(highestrow);
                 Integer sumvalue = 0;
-                for (int i = 1; i < 5; i++){
+                for (int i = 0; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
                     if(collectedRow[i] != null){
                     sumvalue += collectedRow[i].getValue();
@@ -95,7 +95,7 @@ public class Grade {
             else if(closestcard[1] == 3){
                 Carta collectedRow[] = getRow(closestcard[2]);
                 Integer sumvalue = 0;
-                for (int i = 1; i < 5; i++){
+                for (int i = 0; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
                     if(collectedRow[i] != null){
                     sumvalue += collectedRow[i].getValue();
