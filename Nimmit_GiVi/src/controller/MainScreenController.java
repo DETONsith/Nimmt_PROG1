@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.io.InputStream;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -323,12 +324,18 @@ public class MainScreenController {
     @FXML
     void cartatopo00(MouseEvent event) {
         enfaseCard(0);
+        if(activePlayer.getHand().getCards().get(0) == null){
+            return;
+        }
         activePlayer.getHand().selectCard(0);
     }
 
     @FXML
     void cartatopo01(MouseEvent event) {
         enfaseCard(1);
+       if(activePlayer.getHand().getCards().get(1) == null){
+        return; 
+       }
         activePlayer.getHand().selectCard(1);
     }
 
@@ -460,14 +467,17 @@ public class MainScreenController {
 
     private void checkround() {
         
+        
+       
+        
         this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
         this.activePlayer = this.tabuleiro.getNextPlayer();
         this.activePlayer.clearSelectedCard();
         clearEnfaseCards();
-        if (this.isAllCardsPlayed()) {
+         if (this.isAllCardsPlayed()) {
             this.processRoundCards();
-            
         }
+        
      
         this.renderGrid();
         activePlayer.getHand().printCards();
@@ -477,14 +487,28 @@ public class MainScreenController {
     }
 
     private void processRoundCards() {
-        ArrayList<SignedCard> cards = this.tabuleiro.getCardsinBoard();
+        ArrayList<SignedCard> cards = new ArrayList<>();
+        cards = this.tabuleiro.getCardsinBoard();
+
+        //sort cards
+        for (int i = 0; i < cards.size(); i++) {
+            for (int j = 0; j < cards.size() - 1; j++) {
+                if (cards.get(j).getCarta().getNumber() > cards.get(j + 1).getCarta().getNumber()) {
+                    SignedCard aux = cards.get(j);
+                    cards.set(j, cards.get(j + 1));
+                    cards.set(j + 1, aux);
+                }
+            }
+        }
+
         for (SignedCard card : cards) {
             renderBoardCardsOnTop();
             this.tabuleiro.processPlay(card);
             this.renderGrid();
             this.updatePlayerFields();
-            this.sleep(3000);
         }
+        this.tabuleiro.removeCardsFromBoard();
+        System.out.println("removeu as cartas do grid");
     }
 
     private void renderBoardCardsOnTop(){
@@ -497,10 +521,28 @@ public class MainScreenController {
             if(i < cartas.size()){
                 crtTopo[i].setImage(cartas.get(i).getImage());
                 lblTopo[i].setText(Integer.toString(cartas.get(i).getNumber()));
+                lblTopo[i].setFill(cartas.get(i).getColor());
             }
             else{
-                crtTopo[i].setVisible(false);
-                lblTopo[i].setVisible(false);
+                Carta carta = new Carta(1);
+                crtTopo[i].setImage(carta.nullimage());
+                lblTopo[i].setText("");
+            }
+        }
+    }
+
+    private void renderPlayerCardsOnTop(){
+        ArrayList<Carta> cartas = this.activePlayer.getHand().getCards();
+        for (int i = 0; i < 12; i++) {
+            if(i < cartas.size()){
+                crtTopo[i].setImage(cartas.get(i).getImage());
+                lblTopo[i].setText(Integer.toString(cartas.get(i).getNumber()));
+                lblTopo[i].setFill(cartas.get(i).getColor());
+            }
+            else{
+                Carta carta = new Carta(1);
+                crtTopo[i].setImage(carta.nullimage());
+                lblTopo[i].setText("");
             }
         }
     }
@@ -518,24 +560,17 @@ public class MainScreenController {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (grid[i][j] == null) {
-                    crtGrid[i][j].setImage(null);
+                    
+                    crtGrid[i][j].setImage(grid[0][0].nullimage());
                     lblGrid[i][j].setText("");
                     continue;
                 }
                 crtGrid[i][j].setImage(grid[i][j].getImage());
                 lblGrid[i][j].setText(Integer.toString(grid[i][j].getNumber()));
+                lblGrid[i][j].setFill(grid[i][j].getColor());
             }
         }
-        for (int i = 0; i < 12; i++) {
-            if (i < this.activePlayer.getHandSize()) {
-                Carta card = this.activePlayer.getHand().getCards().get(i);
-                crtTopo[i].setImage(card.getImage());
-                lblTopo[i].setText(Integer.toString(card.getNumber()));
-            } else {
-                crtTopo[i].setVisible(false);
-                lblTopo[i].setVisible(false);
-            }
-        }
+        renderPlayerCardsOnTop();
     }
 
 

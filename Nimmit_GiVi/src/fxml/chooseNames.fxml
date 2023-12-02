@@ -50,7 +50,7 @@
          <children>
             <ImageView fitHeight="406.0" fitWidth="649.0">
                <image>
-                  <Image url="@../../assets/Nimmit%20Givi%20Game%20Carts/fundo%20tela%20incicial.jpeg" />
+                  <Image url="@../../assets/Nimmit%20Givi%20Game%20Carts/fundo.jpeg" />
                </image>
             </ImageView>
             <Text layoutX="217.0" layoutY="84.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Partida" textAlignment="CENTER" wrappingWidth="215.13671875">

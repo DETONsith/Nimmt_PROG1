@@ -50,7 +50,7 @@
          <children>
             <ImageView fx:id="backimage" fitHeight="800.0" fitWidth="1412.0" layoutX="1.0">
                <image>
-                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo tela incicial.jpeg" />
+                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.jpeg" />
                </image>
             </ImageView>
             <Pane layoutX="6.0" layoutY="376.0" opacity="0.51" prefHeight="294.0" prefWidth="149.0" style="-fx-background-color: #865F1D; -fx-border-color: #865F1D];">

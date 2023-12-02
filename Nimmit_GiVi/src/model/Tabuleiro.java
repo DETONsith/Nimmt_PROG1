@@ -49,6 +49,7 @@ public class Tabuleiro {
         return this.playerIterator.next();
     }
 
+
     public void gameStart() {
         for (PlayerPlace player : this.players) {
             player.giverCards(this.baralho.pickCards(12));
@@ -85,6 +86,10 @@ public class Tabuleiro {
             }
         }
 
+    }
+
+    public void removeCardsFromBoard() {
+        this.grid.clearRoundCards();
     }
 
     public void processPlay(SignedCard carta) {

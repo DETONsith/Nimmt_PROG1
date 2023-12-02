@@ -3,7 +3,11 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URI;
 
+import org.w3c.dom.css.RGBColor;
+
 import javafx.scene.image.Image;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 
 public class Carta{
     private int number;
@@ -27,7 +31,54 @@ public class Carta{
         }
         return value;
     }
+
+    public Image nullimage(){
+        URI uri = null;
+        uri = new File("Nimmit_GiVi/assets/Nimmit_Givi_Game_Carts/empty.png").toURI();
+        try{
+            InputStream stream = uri.toURL().openStream();
+            Image image = new Image(stream);
+            return image;
+            }
+            catch(Exception e){
+                System.out.println("Erro ao carregar imagem");
+                System.out.println(e);
+                return null;
+        }
+    }
+
+    public Paint getColor(){
+        switch (this.getValue()) {
+            case 1:{
+                return Paint.valueOf("#d1bc99");
+            }
+            case 2:{
+                return Paint.valueOf("#835b18");
+            }
+            case 3:{
+                return Paint.valueOf("#e4bd7e");
+            }
+            case 4:{
+                return Paint.valueOf("#855d1b");
+            }
+            case 5:{
+                return Paint.valueOf("#f3f1ef");
+            }
+            case 6:{
+                return Paint.valueOf("#19191b");
+            }
+            case 7:{
+                return Paint.valueOf("#000000");
+            }
+            default:
+                break;
+        }
+        return null;
+
+    }
+
     public Image getImage(){
+        
         URI uri = null;
         switch (this.getValue()) {
             
@@ -59,8 +110,12 @@ public class Carta{
                 uri = new File("Nimmit_GiVi/assets/Nimmit_Givi_Game_Carts/carta7.png").toURI();
                 break;
             }
+
             default:
                 break;
+        }
+        if (uri == null){
+            uri = new File("Nimmit_GiVi/assets/Nimmit_Givi_Game_Carts/empty.png").toURI();
         }
          try{
             InputStream stream = uri.toURL().openStream();

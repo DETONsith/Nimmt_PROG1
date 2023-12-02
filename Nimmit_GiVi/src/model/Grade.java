@@ -155,6 +155,10 @@ public class Grade {
         return closestcard;
     }
 
+    public void clearRoundCards(){
+        cardstoadd.clear();
+    }
+
     private int getHighestRow(){ //retorna o número linha com a carta mais alta
         Integer[][] rightestcards = getRightestCards();
         Integer[] highestrow = new Integer[2];
