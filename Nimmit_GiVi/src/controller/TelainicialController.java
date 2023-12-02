@@ -30,7 +30,7 @@ public class TelainicialController {
     void iniciarPartida(ActionEvent event) {
         
         if(!isDigit(numJogadores.getText()) || !isDigit(numIA.getText())){
-            numJogadores.setText("1-6");
+            numJogadores.setText("3-6");
             numIA.setText("0-5");
             return;
         }
@@ -39,7 +39,7 @@ public class TelainicialController {
             return;
         }
         if(Integer.parseInt(numJogadores.getText()) > 6){
-            numJogadores.setText("1-6");
+            numJogadores.setText("3-6");
             return;
         }
         if(Integer.parseInt(numIA.getText()) > 5){
@@ -47,7 +47,7 @@ public class TelainicialController {
             return;
         }
         if(Integer.parseInt(numJogadores.getText()) < 1){
-            numJogadores.setText("1-6");
+            numJogadores.setText("3-6");
             return;
         }
         if(Integer.parseInt(numIA.getText()) < 0){
@@ -56,6 +56,10 @@ public class TelainicialController {
         }
         if(Integer.parseInt(numIA.getText()) == Integer.parseInt(numJogadores.getText())){
             numIA.setText("0-"+(Integer.parseInt(numJogadores.getText())-1));
+            return;
+        }
+        if(Integer.parseInt(numJogadores.getText()) < 3){
+            numJogadores.setText("3-6");
             return;
         }
 
