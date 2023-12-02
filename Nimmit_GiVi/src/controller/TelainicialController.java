@@ -54,6 +54,11 @@ public class TelainicialController {
             numIA.setText("0-5");
             return;
         }
+        if(Integer.parseInt(numIA.getText()) == Integer.parseInt(numJogadores.getText())){
+            numIA.setText("0-"+(Integer.parseInt(numJogadores.getText())-1));
+            return;
+        }
+
         try {
             // Load the FXML file for the "nomearJogadores" scene
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/chooseNames.fxml"));
