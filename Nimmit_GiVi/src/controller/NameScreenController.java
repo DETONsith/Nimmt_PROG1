@@ -77,14 +77,14 @@ public class NameScreenController {
         textfields.add(p5name.getText());
         textfields.add(p6name.getText());
 
-        for (int i = qtdPlayers; i < textfields.size(); i++) {
+        for (int i = qtdPlayers; i > textfields.size(); i--) {
             textfields.remove(i);
         }
 
-        for (int i = 0; i< qtdPlayers-1-qtdIA; i++){
+        for (int i = 0; i< qtdPlayers-qtdIA; i++){
             players.add(new PlayerPlace(new Player(textfields.get(i), false)));
         }
-        for (int i = qtdPlayers-1-qtdIA; i< qtdPlayers; i++){
+        for (int i = qtdPlayers-qtdIA; i< qtdPlayers; i++){
             players.add(new PlayerPlace(new Player(textfields.get(i), true)));
         }
 
