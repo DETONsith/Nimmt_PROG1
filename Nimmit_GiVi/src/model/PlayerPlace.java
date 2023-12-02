@@ -30,13 +30,12 @@ public class PlayerPlace {
     }
 
     public Carta playCard(){
-        return this.hand.pickCard();
-        // if(this.player.isIA()){
-        //     return hand.pickRandomCard();
-        // }
-        // else{
-        //     return hand.pickCard();
-        // }
+        if(this.player.isIA()){
+            return hand.pickRandomCard();
+        }
+        else{
+            return hand.pickCard();
+        }
         
     }
 
