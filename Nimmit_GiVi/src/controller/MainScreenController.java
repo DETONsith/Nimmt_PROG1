@@ -309,6 +309,66 @@ public class MainScreenController {
 
     @FXML
     private TextField playerpoints6;
+     @FXML
+    void cartatopo00(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo01(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo02(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo03(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo04(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo05(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo10(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo11(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo12(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo14(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopo15(MouseEvent event) {
+
+    }
+
+    @FXML
+    void cartatopop13(MouseEvent event) {
+
+    }
+
 
     @FXML
     void on_btn_action_click(ActionEvent event) {

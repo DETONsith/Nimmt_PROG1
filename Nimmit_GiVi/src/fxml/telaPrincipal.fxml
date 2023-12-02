@@ -472,7 +472,11 @@
                   </Text>
                </children>
             </Pane>
+<<<<<<< Updated upstream
             <Button fx:id="btn_action" layoutX="503.0" layoutY="109.0" mnemonicParsing="false" onAction="#on_btn_action_click" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Button" textFill="#865f1d">
+=======
+            <Button layoutX="503.0" layoutY="109.0" mnemonicParsing="false" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Button" textFill="#865f1d">
+>>>>>>> Stashed changes
                <effect>
                   <DropShadow>
                      <color>
