@@ -59,7 +59,8 @@ public class Tabuleiro {
         startRound();
     }
 
-    public void checkWinner() {
+    public String checkWinner() {
+        String winnerText = "";
         List<PlayerPlace> winner = new ArrayList<>();
         for (PlayerPlace player : this.players) {
             winner.add(player);
@@ -71,7 +72,9 @@ public class Tabuleiro {
             }
         }
 
-        for (PlayerPlace player : winner) {
+
+
+        for (PlayerPlace player : this.players) {
             if (player.getScore() > smallest_score) {
                 winner.remove(player);
             }
@@ -79,12 +82,16 @@ public class Tabuleiro {
 
         if (winner.size() == 1) {
             System.out.println("O vencedor é o jogador " + winner.get(0).player.getName());
+            winnerText = "O vencedor é o jogador " + winner.get(0).player.getName();
         } else {
             System.out.println("Empate entre os jogadores: ");
+            winnerText = "Empate entre os jogadores: ";
             for (PlayerPlace player : winner) {
                 System.out.println(player.player.getName());
+                winnerText += player.player.getName() + " ";
             }
         }
+        return winnerText;
 
     }
 
@@ -99,7 +106,7 @@ public class Tabuleiro {
         ArrayList<PlayerPlace> current_players = getPlayers();
         for (PlayerPlace player : current_players) {
             if (player.getPlayer() == carta.getPlayer()) {
-                player.decreaseScore(score);
+                player.increaseScore(score);
             }
         }
 

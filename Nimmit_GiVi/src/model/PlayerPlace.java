@@ -51,8 +51,8 @@ public class PlayerPlace {
         return this.score;
     }
 
-    public void decreaseScore(int value){
-        this.score -= value;
+    public void increaseScore(int value){
+        this.score += value;
     }
     
     public Hand getHand(){
