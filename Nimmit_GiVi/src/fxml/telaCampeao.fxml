@@ -45,15 +45,15 @@
          <children>
             <ImageView fitHeight="419.0" fitWidth="655.0" layoutX="-9.0" layoutY="-8.0">
                <image>
-                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo%20tela%20incicial.jpeg" />
+                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.jpeg" />
                </image>
             </ImageView>
             <ImageView fitHeight="395.0" fitWidth="434.0" layoutX="179.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/trofeu.png" />
+                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/camp.png" />
                </image>
             </ImageView>
-            <Text fx:id="lbl_winer" layoutX="256.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhou" wrappingWidth="124.13671875">
+            <Text fx:id="lbl_winer" layoutX="46.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ganhou" textAlignment="CENTER" wrappingWidth="545.7367553710938">
                <font>
                   <Font name="Nirmala UI" size="33.0" />
                </font>
