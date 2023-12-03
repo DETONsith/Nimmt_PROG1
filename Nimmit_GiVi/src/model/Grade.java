@@ -84,6 +84,7 @@ public class Grade {
                 for (int i = 0; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
                     if(collectedRow[i] != null){
+                    carta.getPlayer().addCartaColetada(collectedRow[i]);
                     sumvalue += collectedRow[i].getValue();
                     }
                 }
@@ -98,6 +99,7 @@ public class Grade {
                 for (int i = 0; i < 5; i++){
                     //CALCULAR A SOMA DO VALOR DAS CARTAS E SALVAR EM UM LUGAR PARA VINCULAR ESSE VALOR COM O JOGADOR
                     if(collectedRow[i] != null){
+                    carta.getPlayer().addCartaColetada(collectedRow[i]);
                     sumvalue += collectedRow[i].getValue();
                     }
                 }

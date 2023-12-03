@@ -49,10 +49,9 @@ public class Tabuleiro {
         return this.playerIterator.next();
     }
 
-
     public void gameStart() {
         for (PlayerPlace player : this.players) {
-            player.giverCards(this.baralho.pickCards(12));
+            player.giveCards(this.baralho.pickCards(3));
         }
         ArrayList<Carta> cartas = this.baralho.pickCards(5);
         this.grid.setupInitialCards(cartas.toArray(new Carta[cartas.size()]));
@@ -72,8 +71,6 @@ public class Tabuleiro {
             }
         }
 
-
-
         for (PlayerPlace player : this.players) {
             if (player.getScore() > smallest_score) {
                 winner.remove(player);
@@ -84,13 +81,36 @@ public class Tabuleiro {
             System.out.println("O vencedor é o jogador " + winner.get(0).player.getName());
             winnerText = "O vencedor é o jogador " + winner.get(0).player.getName();
         } else {
-            System.out.println("Empate entre os jogadores: ");
-            winnerText = "Empate entre os jogadores: ";
+            winnerText = "Empate entre os jogadores: [";
             for (PlayerPlace player : winner) {
                 System.out.println(player.player.getName());
-                winnerText += player.player.getName() + " ";
+                winnerText += player.player.getName() + ", ";
             }
+            winnerText = winnerText.substring(0, winnerText.length() - 2);
+            winnerText += "]";
         }
+
+        for (PlayerPlace player : this.players) {
+            winnerText += "\n" + "------------------\n" + player.player.getName() + "\n";
+            if (player.getPlayer().cartasColetadas.size() == 0){
+                winnerText += "Não coletou nenhuma carta";
+            }
+            else{
+                winnerText += "coletou as cartas: [";
+             
+            for (Carta carta : player.getPlayer().cartasColetadas) {
+                winnerText += carta.getNumber() + ", ";
+            }
+            //remove last ,
+            winnerText = winnerText.substring(0, winnerText.length() - 2);
+            winnerText += "]";
+            }
+            
+            winnerText += "\n";
+            winnerText += "e ficou com " + player.getScore() + " pontos";
+
+        }
+
         return winnerText;
 
     }
@@ -107,6 +127,7 @@ public class Tabuleiro {
         for (PlayerPlace player : current_players) {
             if (player.getPlayer() == carta.getPlayer()) {
                 player.increaseScore(score);
+
             }
         }
 
