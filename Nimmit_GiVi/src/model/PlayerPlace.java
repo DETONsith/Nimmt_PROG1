@@ -23,7 +23,7 @@ public class PlayerPlace {
         return this.player;
     }
 
-    public void giverCards(ArrayList<Carta> cartas){
+    public void giveCards(ArrayList<Carta> cartas){
         for (Carta carta : cartas){
             this.giveCard(carta);
         }
