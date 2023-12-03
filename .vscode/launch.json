@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Nimmt_PROG1_774fd7f4"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
@@ -16,7 +23,7 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "Nimmt_PROG1_fd04ab58",
-            "vmArgs": "--module-path \"C:/Users/Dell/Downloads/repositório uffs/UFFS/Semestre 3/Programação 1/Tarefa 4/calculadora/lib/javafx-sdk-21.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/Vi/Nimmt_PROG1/Nimmit_GiVi/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

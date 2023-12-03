@@ -48,9 +48,9 @@
   <children>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
          <children>
-            <ImageView fitHeight="406.0" fitWidth="649.0">
+            <ImageView fitHeight="402.0" fitWidth="642.0" opacity="0.8">
                <image>
-                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.jpeg" />
+                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.jpg" />
                </image>
             </ImageView>
             <Text layoutX="217.0" layoutY="84.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Partida" textAlignment="CENTER" wrappingWidth="215.13671875">
