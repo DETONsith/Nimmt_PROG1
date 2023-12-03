@@ -536,7 +536,9 @@ public class MainScreenController {
         for (int i = 0; i < 12; i++) {
             if(i < cartas.size()){
                 crtTopo[i].setImage(cartas.get(i).getImage());
-                lblTopo[i].setText(Integer.toString(cartas.get(i).getNumber()));
+                int number = cartas.get(i).getNumber();
+                String numberText = (number < 10) ? "0" + number : Integer.toString(number);
+                lblTopo[i].setText(numberText);
                 lblTopo[i].setFill(cartas.get(i).getColor());
             }
             else{
@@ -560,13 +562,15 @@ public class MainScreenController {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (grid[i][j] == null) {
-                    
                     crtGrid[i][j].setImage(grid[0][0].nullimage());
                     lblGrid[i][j].setText("");
                     continue;
                 }
                 crtGrid[i][j].setImage(grid[i][j].getImage());
-                lblGrid[i][j].setText(Integer.toString(grid[i][j].getNumber()));
+                
+                int number = grid[i][j].getNumber();
+                String numberText = (number < 10) ? "0" + number : Integer.toString(number);
+                lblGrid[i][j].setText(numberText);
                 lblGrid[i][j].setFill(grid[i][j].getColor());
             }
         }
