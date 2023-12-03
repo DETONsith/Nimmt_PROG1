@@ -50,27 +50,27 @@
          <children>
             <ImageView fx:id="backimage" fitHeight="800.0" fitWidth="1412.0" layoutX="1.0">
                <image>
-                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.jpeg" />
+                  <Image url="@../../assets/Nimmit_Givi_Game_Carts/fundo.png" />
                </image>
             </ImageView>
             <Pane layoutX="6.0" layoutY="376.0" opacity="0.51" prefHeight="294.0" prefWidth="149.0" style="-fx-background-color: #865F1D; -fx-border-color: #865F1D];">
                <children>
-                  <Text fx:id="lblplayer1" layoutX="6.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 1" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer1" layoutX="6.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 1" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername1" layoutX="6.0" layoutY="23.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints1" layoutX="75.0" layoutY="23.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
-                  <Text fx:id="lblplayer2" layoutX="6.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 2" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer2" layoutX="6.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 2" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername2" layoutX="6.0" layoutY="72.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints2" layoutX="75.0" layoutY="72.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
-                  <Text fx:id="lblplayer3" layoutX="6.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 3" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer3" layoutX="6.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 3" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername3" layoutX="6.0" layoutY="120.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints3" layoutX="75.0" layoutY="120.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
-                  <Text fx:id="lblplayer4" layoutX="6.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 4" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer4" layoutX="6.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 4" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername4" layoutX="6.0" layoutY="165.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints4" layoutX="75.0" layoutY="165.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
-                  <Text fx:id="lblplayer5" layoutX="6.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 5" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer5" layoutX="6.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 5" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername5" layoutX="6.0" layoutY="212.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints5" layoutX="75.0" layoutY="212.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
-                  <Text fx:id="lblplayer6" layoutX="6.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jogador 6" wrappingWidth="67.51171875" />
+                  <Text fx:id="lblplayer6" layoutX="6.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="Jogador 6" wrappingWidth="67.51171875" />
                   <TextField fx:id="playername6" layoutX="6.0" layoutY="259.0" prefHeight="25.0" prefWidth="68.0" promptText="Nome" />
                   <TextField fx:id="playerpoints6" layoutX="75.0" layoutY="259.0" prefHeight="25.0" prefWidth="68.0" promptText="Pontos" />
                </children>
@@ -82,9 +82,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbltopo_00" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_00" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103" >
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font></Text>
                   <ImageView fx:id="crttopo_01" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" onMouseClicked="#cartatopo01" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -111,29 +111,29 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbltopo_01" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_01" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_02" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_02" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_03" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_03" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_04" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_04" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_05" fill="#d1bc99" layoutX="434.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_05" fill="#d1bc99" layoutX="434.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -145,9 +145,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbltopo_10" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_10" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crttopo_11" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" onMouseClicked="#cartatopo11" pickOnBounds="true" preserveRatio="true">
@@ -175,29 +175,29 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbltopo_11" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_11" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_12" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_12" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_13" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_13" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_14" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_14" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbltopo_15" fill="#d1bc99" layoutX="434.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbltopo_15" fill="#d1bc99" layoutX="434.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -209,9 +209,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_00" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_00" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crt_01" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -234,24 +234,24 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_01" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_01" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_02" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_02" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_03" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_03" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_04" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_04" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -263,9 +263,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_10" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_10" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crt_11" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -288,24 +288,24 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_11" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_11" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_12" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_12" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_13" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_13" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_14" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_14" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -317,9 +317,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_30" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_30" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crt_31" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -342,24 +342,24 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_31" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_31" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_32" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_32" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_33" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_33" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_34" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_34" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -371,9 +371,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_20" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_20" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crt_21" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -396,24 +396,24 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_21" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_21" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_22" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_22" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_23" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_23" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_24" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_24" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
@@ -425,9 +425,9 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_40" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_40" fill="#d1bc99" layoutX="33.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                   <ImageView fx:id="crt_41" fitHeight="114.0" fitWidth="78.0" layoutX="82.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
@@ -450,33 +450,29 @@
                         <Image url="@../../../../Pictures/Nimmit%20Givi%20Game%20Carts/carta1.png" />
                      </image>
                   </ImageView>
-                  <Text fx:id="lbl_41" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_41" fill="#d1bc99" layoutX="114.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_42" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_42" fill="#d1bc99" layoutX="193.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_43" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_43" fill="#d1bc99" layoutX="273.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
-                  <Text fx:id="lbl_44" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="103">
+                  <Text fx:id="lbl_44" fill="#d1bc99" layoutX="353.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" text="103">
                      <font>
-                        <Font name="OPTIOnyx" size="15.0" />
+                        <Font name="Wingdings 2" size="15.0" />
                      </font>
                   </Text>
                </children>
             </Pane>
-<<<<<<< Updated upstream
-            <Button fx:id="btn_action" layoutX="503.0" layoutY="109.0" mnemonicParsing="false" onAction="#on_btn_action_click" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Button" textFill="#865f1d">
-=======
-            <Button layoutX="503.0" layoutY="109.0" mnemonicParsing="false" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Button" textFill="#865f1d">
->>>>>>> Stashed changes
+            <Button fx:id="btn_action" layoutX="503.0" layoutY="109.0" mnemonicParsing="false" onAction="#on_btn_action_click" style="-fx-border-color: #865f1d; -fx-background-color: #E8CFA4;" text="Escolher" textFill="#865f1d">
                <effect>
                   <DropShadow>
                      <color>
