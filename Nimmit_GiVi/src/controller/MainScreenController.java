@@ -35,9 +35,6 @@ public class MainScreenController {
     private Button btn_action;
 
     @FXML
-    private ImageView backimage;
-
-    @FXML
     private ImageView crt_00;
 
     @FXML
@@ -315,13 +312,10 @@ public class MainScreenController {
 
     @FXML
     void on_btn_action_click(ActionEvent event) {
-        System.out.println(activePlayer.getHand().getSelectedCardIndex());
-        System.err.println(activePlayer);
         if (activePlayer.getHand().getSelectedCardIndex() == -1) {
             return;
         }
         checkround();
-        System.out.println("Botão fim");
     }
 
     @FXML
@@ -335,73 +329,106 @@ public class MainScreenController {
 
     @FXML
     void cartatopo01(MouseEvent event) {
-        enfaseCard(1);
        if(activePlayer.getHand().getCards().get(1) == null){
         return; 
        }
+        enfaseCard(1);
+       
         activePlayer.getHand().selectCard(1);
     }
 
     @FXML
     void cartatopo02(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(2) == null){
+        return; 
+       }
         enfaseCard(2);
         activePlayer.getHand().selectCard(2);
     }
 
     @FXML
     void cartatopo03(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(3) == null){
+        return; 
+       }
         enfaseCard(3);
         activePlayer.getHand().selectCard(3);
     }
 
     @FXML
     void cartatopo04(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(4) == null){
+        return; 
+       }
         enfaseCard(4);
         activePlayer.getHand().selectCard(4);
     }
 
     @FXML
     void cartatopo05(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(5) == null){
+        return; 
+       }
         enfaseCard(5);
         activePlayer.getHand().selectCard(5);
     }
 
     @FXML
     void cartatopo10(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(6) == null){
+        return; 
+       }
         enfaseCard(6);
         activePlayer.getHand().selectCard(6);
     }
 
     @FXML
     void cartatopo11(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(7) == null){
+        return; 
+       }
         enfaseCard(7);
         activePlayer.getHand().selectCard(7);
     }
 
     @FXML
     void cartatopo12(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(8) == null){
+        return; 
+       }
         enfaseCard(8);
         activePlayer.getHand().selectCard(8);
     }
 
-    @FXML
-    void cartatopo14(MouseEvent event) {
+     @FXML
+    void cartatopo13(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(9) == null){
+        return; 
+       }
         enfaseCard(9);
         activePlayer.getHand().selectCard(9);
     }
 
+
     @FXML
-    void cartatopo15(MouseEvent event) {
+    void cartatopo14(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(10) == null){
+        return; 
+       }
         enfaseCard(10);
         activePlayer.getHand().selectCard(10);
     }
 
     @FXML
-    void cartatopop13(MouseEvent event) {
+    void cartatopo15(MouseEvent event) {
+        if(activePlayer.getHand().getCards().get(11) == null){
+        return; 
+       }
         enfaseCard(11);
         activePlayer.getHand().selectCard(11);
     }
 
+   
     private List<TextField> playerNames = new ArrayList<>();
     private List<TextField> playerPoints = new ArrayList<>();
     private List<Text> playerLabels = new ArrayList<>();
@@ -425,12 +452,12 @@ public class MainScreenController {
 
         crtTopo = new ImageView[] {
             crttopo_00, crttopo_01, crttopo_02, crttopo_03, crttopo_04, crttopo_05, crttopo_10, crttopo_11,
-            crttopo_12, crttopo_14, crttopo_15, crttopo_13
+            crttopo_12, crttopo_13, crttopo_14, crttopo_15
         };
 
         lblTopo = new Text[] {
             lbltopo_00, lbltopo_01, lbltopo_02, lbltopo_03, lbltopo_04, lbltopo_05, lbltopo_10, lbltopo_11,
-            lbltopo_12, lbltopo_14, lbltopo_15, lbltopo_13 
+            lbltopo_12, lbltopo_13, lbltopo_14, lbltopo_15  
         };
 
         playerNames.addAll(Arrays.asList(playername1, playername2, playername3, playername4, playername5, playername6));
@@ -442,13 +469,11 @@ public class MainScreenController {
 
     public void setTabuleiro(Tabuleiro tabuleiro) {
         this.tabuleiro = tabuleiro;
-        System.out.println("Tabuleiro setado");
-        System.out.println(this.tabuleiro);
         this.tabuleiro.gameStart();
         activePlayer = this.tabuleiro.getNextPlayer();
+        highlightCurrentPlayer();
         renderGrid();
         updatePlayerFields();
-        System.out.println("Jogador ativo: ");
     }
 
     private void checkround() {
@@ -458,6 +483,7 @@ public class MainScreenController {
         
         this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
         this.activePlayer = this.tabuleiro.getNextPlayer();
+        highlightCurrentPlayer();
         this.activePlayer.clearSelectedCard();
         clearEnfaseCards();
          if (this.isAllCardsPlayed()) {
@@ -468,7 +494,6 @@ public class MainScreenController {
         
      
         this.renderGrid();
-        activePlayer.getHand().printCards();
 
         if(activePlayer.getPlayer().isIA()){
             checkround();
@@ -599,12 +624,24 @@ public class MainScreenController {
                 PlayerPlace player = players.get(i);
                 playerNames.get(i).setText(player.getPlayer().getName());
                 playerPoints.get(i).setText(Integer.toString(player.getScore()));
-                playerNames.get(i).setDisable(true);
-                playerPoints.get(i).setDisable(true);
+                playerNames.get(i).setEditable(false);
+                playerPoints.get(i).setEditable(false);
             } else {
                 playerNames.get(i).setVisible(false);
                 playerPoints.get(i).setVisible(false);
                 playerLabels.get(i).setVisible(false);
+            }
+        }
+    }
+
+    private void highlightCurrentPlayer(){
+        for (int i = 0; i < 6; i++) {
+            if (i < tabuleiro.getPlayers().size()) {
+                if (tabuleiro.getPlayers().get(i) == activePlayer) {
+                    playerLabels.get(i).setStyle("-fx-font-weight: bold; -fx-effect: dropshadow(three-pass-box, white, 3, 3, 0, 0);");
+                } else {
+                    playerLabels.get(i).setStyle("");
+                }
             }
         }
     }
