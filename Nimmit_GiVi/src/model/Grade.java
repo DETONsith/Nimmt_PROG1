@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Grade {
+    //Responsável pelo controle da grade de cartas do jogo e das cartas que serão adicionadas a ela
     Carta[][] grid;
     ArrayList<SignedCard> cardstoadd;
 
@@ -41,7 +42,6 @@ public class Grade {
     }
 
     public void addCard(SignedCard carta){
-        System.out.println(grid);
         this.cardstoadd.add(carta);
         orderCards();
     }
@@ -59,19 +59,9 @@ public class Grade {
         }
     }
 
-    private void orderCards(){ //ordenando com bubble sort
-        for (int i = 0; i < this.cardstoadd.size(); i++){
-            for (int j = i+1; j < this.cardstoadd.size(); j++){
-                if (this.cardstoadd.get(i).getCarta().getValue() < this.cardstoadd.get(j).getCarta().getValue()){
-                    SignedCard carta = this.cardstoadd.get(i);
-                    this.cardstoadd.set(i, this.cardstoadd.get(j));
-                    this.cardstoadd.set(j, carta);
-                }
-            }
-        }
+    public void clearRoundCards(){
+        cardstoadd.clear();
     }
-
-
 
     public Integer processCard(SignedCard carta){
         Integer playerscore = 0;
@@ -113,9 +103,18 @@ public class Grade {
             }
             return playerscore;
     }
-
-    
-    
+   
+    private void orderCards(){ //ordenando com bubble sort
+        for (int i = 0; i < this.cardstoadd.size(); i++){
+            for (int j = i+1; j < this.cardstoadd.size(); j++){
+                if (this.cardstoadd.get(i).getCarta().getValue() < this.cardstoadd.get(j).getCarta().getValue()){
+                    SignedCard carta = this.cardstoadd.get(i);
+                    this.cardstoadd.set(i, this.cardstoadd.get(j));
+                    this.cardstoadd.set(j, carta);
+                }
+            }
+        }
+    }
 
     private Integer[][] getRightestCards(){
         Integer[][] rightestcard = new Integer [5][2];
@@ -157,10 +156,6 @@ public class Grade {
         return closestcard;
     }
 
-    public void clearRoundCards(){
-        cardstoadd.clear();
-    }
-
     private int getHighestRow(){ //retorna o número linha com a carta mais alta
         Integer[][] rightestcards = getRightestCards();
         Integer[] highestrow = new Integer[2];
@@ -175,6 +170,7 @@ public class Grade {
         }
         return highestrow[1];
     }
+
 }
 
 

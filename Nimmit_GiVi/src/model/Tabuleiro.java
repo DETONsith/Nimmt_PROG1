@@ -51,7 +51,7 @@ public class Tabuleiro {
 
     public void gameStart() {
         for (PlayerPlace player : this.players) {
-            player.giveCards(this.baralho.pickCards(3));
+            player.giveCards(this.baralho.pickCards(12));
         }
         ArrayList<Carta> cartas = this.baralho.pickCards(5);
         this.grid.setupInitialCards(cartas.toArray(new Carta[cartas.size()]));
@@ -83,7 +83,6 @@ public class Tabuleiro {
         } else {
             winnerText = "Empate entre os jogadores: [";
             for (PlayerPlace player : winner) {
-                System.out.println(player.player.getName());
                 winnerText += player.player.getName() + ", ";
             }
             winnerText = winnerText.substring(0, winnerText.length() - 2);

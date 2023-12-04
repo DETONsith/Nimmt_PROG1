@@ -89,8 +89,6 @@ public class NameScreenController {
         }
 
         System.out.println("iniciando partida");
-        System.out.println("qtdPlayers: " + qtdPlayers);
-        System.out.println("qtdIA: " + qtdIA);
         
 
 
@@ -116,74 +114,29 @@ public class NameScreenController {
             e.printStackTrace();
         }
     }
-    public void startFields(){
-        System.out.println("qtdPlayers: " + qtdPlayers);
+    public void startFields() {
 
-        p1name.setVisible(false);
-        p1label.setVisible(false);
-        p2name.setVisible(false);
-        p2label.setVisible(false);
-        p3name.setVisible(false);
-        p3label.setVisible(false);
-        p4name.setVisible(false);
-        p4label.setVisible(false);
-        p5name.setVisible(false);
-        p5label.setVisible(false);
-        p6name.setVisible(false);
-        p6label.setVisible(false);
+        ArrayList<TextField> nameFields = new ArrayList<>();
+        ArrayList<Text> labels = new ArrayList<>();
 
-        if (qtdPlayers == 2){
-            p1name.setVisible(true);
-            p1label.setVisible(true);
-            p2name.setVisible(true);
-            p2label.setVisible(true);
+        nameFields.add(p1name);
+        nameFields.add(p2name);
+        nameFields.add(p3name);
+        nameFields.add(p4name);
+        nameFields.add(p5name);
+        nameFields.add(p6name);
+
+        labels.add(p1label);
+        labels.add(p2label);
+        labels.add(p3label);
+        labels.add(p4label);
+        labels.add(p5label);
+        labels.add(p6label);
+
+        for (int i = 0; i < nameFields.size(); i++) {
+            nameFields.get(i).setVisible(i < qtdPlayers);
+            labels.get(i).setVisible(i < qtdPlayers);
         }
-        else if (qtdPlayers == 3){
-            p1name.setVisible(true);
-            p1label.setVisible(true);
-            p2name.setVisible(true);
-            p2label.setVisible(true);
-            p3name.setVisible(true);
-            p3label.setVisible(true);
-        }
-        else if (qtdPlayers == 4){
-            p1name.setVisible(true);
-            p1label.setVisible(true);
-            p2name.setVisible(true);
-            p2label.setVisible(true);
-            p3name.setVisible(true);
-            p3label.setVisible(true);
-            p4name.setVisible(true);
-            p4label.setVisible(true);
-        }
-        else if (qtdPlayers == 5){
-            p1name.setVisible(true);
-            p1label.setVisible(true);
-            p2name.setVisible(true);
-            p2label.setVisible(true);
-            p3name.setVisible(true);
-            p3label.setVisible(true);
-            p4name.setVisible(true);
-            p4label.setVisible(true);
-            p5name.setVisible(true);
-            p5label.setVisible(true);
-        }
-        else if (qtdPlayers == 6){
-            p1name.setVisible(true);
-            p1label.setVisible(true);
-            p2name.setVisible(true);
-            p2label.setVisible(true);
-            p3name.setVisible(true);
-            p3label.setVisible(true);
-            p4name.setVisible(true);
-            p4label.setVisible(true);
-            p5name.setVisible(true);
-            p5label.setVisible(true);
-            p6name.setVisible(true);
-            p6label.setVisible(true);
-        }
-    
-        
     }
 
     @FXML
