@@ -9,10 +9,15 @@ import javafx.scene.paint.Paint;
 public class Carta{
     private int number;
     private int value;
+    private Image image;
+    private Paint color;
     public Carta(int number){
         this.number = number;
         this.value = calculateCartaValue(number);
+        this.image = switchImage();
+        this.color = switchColor();
     }
+    
     public int calculateCartaValue(int number){
         int value = 1;
         if (isLastDigit5(number)){
@@ -42,7 +47,7 @@ public class Carta{
         }
     }
 
-    public Paint getColor(){
+    private Paint switchColor(){
         switch (this.getValue()) {
             case 1:{
                 return Paint.valueOf("#d1bc99");
@@ -72,7 +77,7 @@ public class Carta{
 
     }
 
-    public Image getImage(){
+    private Image switchImage(){
         
         URI uri = null;
         switch (this.getValue()) {
@@ -160,7 +165,13 @@ public class Carta{
         return value;
     }
 
-   
+    public Paint getColor(){
+        return this.color;
+    }
+
+    public Image getImage(){
+        return this.image;
+    }
 
 
 

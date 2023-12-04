@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    String name;
-    boolean isIA;
-    List<Carta> cartasColetadas;
+    //Responsável pelo controle do jogador e das cartas que serão adicionadas a ele
+    private String name;
+    private boolean isIA;
+    public List<Carta> cartasColetadas;
 
     public Player(String name, boolean isIA) {
         this.name = name;
