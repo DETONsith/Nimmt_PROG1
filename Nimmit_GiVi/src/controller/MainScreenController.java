@@ -315,6 +315,7 @@ public class MainScreenController {
         if (activePlayer.getHand().getSelectedCardIndex() == -1) {
             return;
         }
+        System.out.println("Processando jogada...");
         checkround();
     }
 
@@ -480,7 +481,7 @@ public class MainScreenController {
         
         
        
-        
+        System.out.println(this.activePlayer.getPlayer().getName() + " Está jogando"); //controle em log da jogada
         this.tabuleiro.addCardtoGrid(new SignedCard(this.activePlayer.playCard(), this.activePlayer.getPlayer()));
         this.activePlayer = this.tabuleiro.getNextPlayer();
         highlightCurrentPlayer();
